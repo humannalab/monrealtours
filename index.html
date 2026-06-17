@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Monreal Tours — Experiências únicas em neve e ski, náutico e kite, motor e aventura, luxo exclusivo e roteiros pelo mundo. Desde 1970.">
+  <title>Monreal Tours — Desde 1970</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* ============================================
+       HEADER
+       ============================================ */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--color-primary);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      height: 72px;
+    }
+
+    .header__logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .header__logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    .header__nav a {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.8);
+      letter-spacing: 0.04em;
+      transition: color var(--transition);
+    }
+
+    .header__nav a:hover {
+      color: var(--color-white);
+    }
+
+    .header__cta {
+      font-size: 0.82rem;
+      font-weight: 400;
+      padding: 0.6rem 1.3rem;
+      white-space: nowrap;
+    }
+
+    /* Hamburger */
+    .header__hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .header__hamburger span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-white);
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    .header__hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .header__hamburger.is-open span:nth-child(2) { opacity: 0; }
+    .header__hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav */
+    .header__mobile-nav {
+      display: none;
+      flex-direction: column;
+      background-color: #001070;
+      padding: var(--space-sm) 0 var(--space-md);
+    }
+
+    .header__mobile-nav.is-open {
+      display: flex;
+    }
+
+    .header__mobile-nav a {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.8);
+      padding: 0.75rem var(--container-pad);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: color var(--transition);
+    }
+
+    .header__mobile-nav a:hover {
+      color: var(--color-white);
+    }
+
+    .header__mobile-nav .header__cta {
+      margin: var(--space-sm) var(--container-pad) 0;
+      text-align: center;
+      display: block;
+    }
+
+    /* ============================================
+       HERO
+       ============================================ */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      background-color: #060606;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero__content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--color-white);
+      padding: var(--space-md);
+      gap: 1.5rem;
+    }
+
+    /* Texto rotativo */
+    .hero__rotator {
+      position: relative;
+      height: 1.15em;
+      width: 100%;
+    }
+
+    .hero__rotator-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero__rotator-list li {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: fade-word 30s infinite;
+    }
+
+    .hero__rotator-list li:nth-child(1) { animation-delay: 0s; }
+    .hero__rotator-list li:nth-child(2) { animation-delay: 6s; }
+    .hero__rotator-list li:nth-child(3) { animation-delay: 12s; }
+    .hero__rotator-list li:nth-child(4) { animation-delay: 18s; }
+    .hero__rotator-list li:nth-child(5) { animation-delay: 24s; }
+
+    @keyframes fade-word {
+      0%   { opacity: 0; }
+      4%   { opacity: 1; }
+      16%  { opacity: 1; }
+      20%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes fade-bg {
+      0%   { opacity: 0; }
+      5%   { opacity: 1; }
+      18%  { opacity: 1; }
+      23%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .hero__rotator-list span {
+      font-family: var(--font-display);
+      font-size: clamp(2.22rem, 5.5vw, 4rem); /* 40px → 72px */
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--color-white);
+      white-space: nowrap;
+    }
+
+    .hero__tagline {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .hero__subtitle {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--color-off-white);
+      opacity: 0.8;
+    }
+
+    /* ============================================
+       BOTÃO SHINY — usado no hero e demais seções
+       ============================================ */
+    .btn-shiny {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 2.4rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      border-radius: 8px;
+      overflow: hidden;
+      color: rgba(255, 255, 255, 0.92);
+      background-color: #000d3d;
+      box-shadow:
+        0 0 0 1.5px rgba(210, 225, 255, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18),
+        inset 0 0 20px rgba(40, 100, 255, 0.08),
+        0 8px 32px rgba(0, 20, 137, 0.22);
+      transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .btn-shiny::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 55%, rgba(0, 20, 137, 0.15) 100%);
+      pointer-events: none;
+    }
+
+    .btn-shiny::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.04));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .btn-shiny:hover {
+      background-color: #001240;
+      color: #ffffff;
+      box-shadow:
+        0 0 0 1.5px rgba(230, 240, 255, 0.9),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28),
+        inset 0 0 24px rgba(50, 120, 255, 0.12),
+        0 12px 40px rgba(0, 20, 137, 0.4);
+    }
+
+    .btn-shiny:hover::after { opacity: 1; }
+
+    /* Hero btn alias */
+    .hero__btn { /* inherits .btn-shiny */ }
+
+    /* Hero — background slideshow */
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero__bg-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: fade-bg 30s infinite;
+    }
+
+    .hero__bg-slide:nth-child(1) { animation-delay: 0s; }
+    .hero__bg-slide:nth-child(2) { animation-delay: 6s; }
+    .hero__bg-slide:nth-child(3) { animation-delay: 12s; }
+    .hero__bg-slide:nth-child(4) { animation-delay: 18s; }
+    .hero__bg-slide:nth-child(5) { animation-delay: 24s; }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.42);
+      pointer-events: none;
+    }
+
+    /* Indicador de scroll — rodapé da moldura */
+    .hero__scroll {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .hero__scroll span {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .hero__scroll-arrow {
+      width: 20px;
+      height: 20px;
+      border-right: 2px solid rgba(255, 255, 255, 0.6);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+      transform: rotate(45deg);
+      animation: scroll-bounce 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scroll-bounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.6; }
+      50%       { transform: rotate(45deg) translateY(6px); opacity: 1; }
+    }
+
+    /* ============================================
+       RESPONSIVO
+       ============================================ */
+    @media (max-width: 768px) {
+      .header__nav,
+      .header__cta {
+        display: none;
+      }
+
+      .header__hamburger {
+        display: flex;
+      }
+
+      .hero__rotator-list span {
+        font-size: clamp(2rem, 10vw, 2.8rem);
+      }
+
+      .hero__rotator {
+        height: 1.15em;
+      }
+
+      .hero__tagline {
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+      }
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      overflow: hidden;
+    }
+
+    .footer__top {
+      padding: var(--space-lg) 0 var(--space-md);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: var(--space-lg);
+    }
+
+    .footer__col-title {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer__col a,
+    .footer__col p,
+    .footer__col address {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+      font-style: normal;
+      color: rgba(255, 255, 255, 0.65);
+      padding: 0.3rem 0;
+      transition: color var(--transition);
+    }
+
+    .footer__col a:hover {
+      color: var(--color-white);
+    }
+
+    /* Logo área no footer */
+    .footer__logo {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer__logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    /* Linha final */
+    .footer__bottom {
+      padding: var(--space-sm) 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer__bottom-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    .footer__copyright {
+      font-family: var(--font-body);
+      font-size: 0.67rem;
+      font-weight: 300;
+      color: var(--color-gray);
+      max-width: none;
+    }
+
+    @media (max-width: 768px) {
+      .footer__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+      }
+
+      .footer__bottom-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* ============================================
+       INTRO / SPLASH SCREEN
+       ============================================ */
+    .intro {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: intro-fade-out 1s ease-in-out 3.2s forwards;
+    }
+
+    .intro__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .intro__logo {
+      height: 56px;
+      width: auto;
+      opacity: 0;
+      animation: intro-logo-in 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+    }
+
+    .intro__tagline {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      clip-path: inset(0 100% 0 0);
+      animation: intro-tagline-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) 1.5s forwards;
+    }
+
+    @keyframes intro-logo-in {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes intro-tagline-reveal {
+      from { clip-path: inset(0 100% 0 0); }
+      to   { clip-path: inset(0 0% 0 0); }
+    }
+
+    @keyframes intro-fade-out {
+      from { opacity: 1; }
+      to   { opacity: 0; visibility: hidden; }
+    }
+
+    body.intro-active { overflow: hidden; }
+
+    /* ============================================
+       NAV DROPDOWN — Experiências
+       ============================================ */
+    .nav-has-dropdown { position: relative; }
+
+    .nav-dropdown-trigger {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.8);
+      letter-spacing: 0.04em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: color var(--transition);
+    }
+
+    .nav-has-dropdown.is-open .nav-dropdown-trigger { color: var(--color-white); }
+
+    .nav-dropdown-trigger__chevron {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      transition: transform 0.22s ease;
+    }
+
+    .nav-has-dropdown.is-open .nav-dropdown-trigger__chevron { transform: rotate(180deg); }
+
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 16px);
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      width: 640px;
+      background: #0a0e2a;
+      border-radius: 16px;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      z-index: 200;
+      overflow: hidden;
+    }
+
+    .nav-dropdown::before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 0;
+      right: 0;
+      height: 16px;
+    }
+
+    .nav-dropdown__nub {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 14px;
+      height: 14px;
+      background: #0a0e2a;
+      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      transition: left 0.22s ease;
+      z-index: 2;
+    }
+
+    .nav-has-dropdown.is-open .nav-dropdown {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    .nav-dropdown__inner {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 8px;
+      padding: 10px;
+    }
+
+    .nav-dropdown__list {
+      list-style: none;
+      margin: 0;
+      padding: 10px 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-dropdown__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .nav-dropdown__item:hover,
+    .nav-dropdown__item.is-active {
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .nav-dropdown__item-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .nav-dropdown__item-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-white);
+      line-height: 1;
+    }
+
+    .nav-dropdown__item-desc {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 0.01em;
+    }
+
+    .nav-dropdown__item-arrow {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.35);
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-dropdown__item:hover .nav-dropdown__item-arrow,
+    .nav-dropdown__item.is-active .nav-dropdown__item-arrow {
+      opacity: 1;
+      transform: translateX(0);
+      color: var(--accent, rgba(255,255,255,0.6));
+    }
+
+    .nav-dropdown__preview {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .nav-drop-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .nav-drop-slide.is-active { opacity: 1; }
+
+    /* ============================================
+       CATEGORIAS
+       ============================================ */
+    .categorias {
+      background-color: #000C52;
+      padding: 5rem 0 4rem;
+    }
+
+    .categorias__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: 2.5rem;
+    }
+
+    .categorias__grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .cat-card {
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      display: block;
+      height: 300px;
+      grid-column: span 2;
+      text-decoration: none;
+    }
+
+    .cat-card:nth-child(4),
+    .cat-card:nth-child(5) {
+      grid-column: span 3;
+    }
+
+    .cat-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.08) 55%, transparent 100%);
+      transition: background var(--transition);
+    }
+
+    .cat-card:hover .cat-card__overlay {
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%);
+    }
+
+    .cat-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .cat-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .cat-card__info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 1.2rem 1.5rem;
+      z-index: 1;
+    }
+
+    .cat-card__name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-white);
+      line-height: 1.2;
+    }
+
+    .cat-card__arrow {
+      font-size: 1.4rem;
+      color: var(--color-white);
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .cat-card:hover .cat-card__arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media (max-width: 768px) {
+      .categorias__grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .cat-card,
+      .cat-card:nth-child(4),
+      .cat-card:nth-child(5) {
+        grid-column: span 1;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body class="intro-active">
+
+  <!-- ============================================
+       INTRO / SPLASH SCREEN
+       ============================================ -->
+  <div id="intro" class="intro" aria-hidden="true">
+    <div class="intro__inner">
+      <img class="intro__logo" src="assets/images/logo.svg" alt="Monreal Tours">
+      <p class="intro__tagline">Desde 1970, realizando sonhos</p>
+    </div>
+  </div>
+
+  <!-- ============================================
+       HEADER
+       ============================================ -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+
+        <a href="index.html" class="header__logo" aria-label="Monreal Tours — início">
+          <img src="assets/images/logo.svg" alt="Monreal Tours" height="36">
+        </a>
+
+        <nav class="header__nav" aria-label="Navegação principal">
+
+          <div class="nav-has-dropdown">
+            <button class="nav-dropdown-trigger" aria-expanded="false" aria-controls="dropdown-experiencias">
+              Experiências
+              <svg class="nav-dropdown-trigger__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+
+            <div class="nav-dropdown" id="dropdown-experiencias" role="menu">
+              <div class="nav-dropdown__nub" id="nav-nub"></div>
+              <div class="nav-dropdown__inner">
+
+                <ul class="nav-dropdown__list">
+                  <li><a href="neve-ski.html" class="nav-dropdown__item" data-cat="neve-ski" style="--accent:#00A0D2" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Neve &amp; Ski</span>
+                      <span class="nav-dropdown__item-desc">Europa, EUA, Canadá e Andorra</span>
+                    </span>
+                    <span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="nautico-kite.html" class="nav-dropdown__item" data-cat="nautico-kite" style="--accent:#00A878" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Náutico &amp; Kite</span>
+                      <span class="nav-dropdown__item-desc">Cruzeiros, vela e esportes aquáticos</span>
+                    </span>
+                    <span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="motor-aventura.html" class="nav-dropdown__item" data-cat="motor-aventura" style="--accent:#F47920" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Motor &amp; Aventura</span>
+                      <span class="nav-dropdown__item-desc">Rally, off-road e expedições</span>
+                    </span>
+                    <span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="luxo-exclusivo.html" class="nav-dropdown__item" data-cat="luxo-exclusivo" style="--accent:#7B2D8B" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Luxo &amp; Exclusivo</span>
+                      <span class="nav-dropdown__item-desc">Experiências premium e personalizadas</span>
+                    </span>
+                    <span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="roteiros-destinos.html" class="nav-dropdown__item" data-cat="roteiros-destinos" style="--accent:#E8006A" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Roteiros &amp; Destinos</span>
+                      <span class="nav-dropdown__item-desc">Pacotes completos pelo mundo</span>
+                    </span>
+                    <span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                </ul>
+
+                <div class="nav-dropdown__preview">
+                  <div class="nav-drop-slide is-active" data-cat="neve-ski" style="background-image:url('assets/images/ski.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="nautico-kite" style="background-image:url('assets/images/nautico-kite.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="motor-aventura" style="background-image:url('assets/images/motor-aventura.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="luxo-exclusivo" style="background-image:url('assets/images/luxo-exclusivo.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="roteiros-destinos" style="background-image:url('assets/images/roteiros-destinos.jpg')"></div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <a href="sobre.html">Sobre</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+
+        <a href="contato.html" class="header__cta btn-shiny">Fale conosco</a>
+
+        <button class="header__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="header__mobile-nav" id="mobile-nav" aria-label="Navegação mobile">
+      <a href="roteiros-destinos.html">Experiências</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="contato.html" class="header__cta btn-shiny">Fale conosco</a>
+    </nav>
+  </header>
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="hero" aria-label="Apresentação Monreal Tours">
+
+    <!-- Fotos de fundo sincronizadas com o texto rotativo -->
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__bg-slide" style="background-image:url('assets/images/ski.jpg')"></div>
+      <div class="hero__bg-slide" style="background-image:url('assets/images/nautico-kite.jpg')"></div>
+      <div class="hero__bg-slide" style="background-image:url('assets/images/motor-aventura.jpg')"></div>
+      <div class="hero__bg-slide" style="background-image:url('assets/images/luxo-exclusivo.jpg')"></div>
+      <div class="hero__bg-slide" style="background-image:url('assets/images/roteiros-destinos.jpg')"></div>
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__content">
+
+      <div class="hero__rotator" aria-label="Tipos de experiência">
+        <ul class="hero__rotator-list" aria-live="polite">
+          <li><span>Neve &amp; Ski</span></li>
+          <li><span>Náutico &amp; Kite</span></li>
+          <li><span>Motor &amp; Aventura</span></li>
+          <li><span>Luxo &amp; Exclusivo</span></li>
+          <li><span>Roteiros &amp; Destinos</span></li>
+        </ul>
+      </div>
+
+      <p class="hero__tagline">Viagens inesquecíveis desde 1970</p>
+
+      <p class="hero__subtitle">Descubra sua próxima experiência</p>
+
+      <a href="roteiros-destinos.html" class="hero__btn btn-shiny">Conheça nossas viagens</a>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Explorar</span>
+        <div class="hero__scroll-arrow"></div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ============================================
+       CATEGORIAS
+       ============================================ -->
+  <section class="categorias" id="experiencias" aria-label="Nossas Experiências">
+    <div class="container">
+      <h2 class="categorias__title">Nossas Experiências</h2>
+      <div class="categorias__grid">
+
+        <a href="neve-ski.html" class="cat-card" style="background-image:url('assets/images/ski.jpg');--accent:#00A0D2" aria-label="Neve e Ski">
+          <div class="cat-card__overlay"></div>
+          <div class="cat-card__info">
+            <h3 class="cat-card__name">Neve &amp; Ski</h3>
+            <span class="cat-card__arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <a href="nautico-kite.html" class="cat-card" style="background-image:url('assets/images/nautico-kite.jpg');--accent:#00A878" aria-label="Náutico e Kite">
+          <div class="cat-card__overlay"></div>
+          <div class="cat-card__info">
+            <h3 class="cat-card__name">Náutico &amp; Kite</h3>
+            <span class="cat-card__arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <a href="motor-aventura.html" class="cat-card" style="background-image:url('assets/images/motor-aventura.jpg');--accent:#F47920" aria-label="Motor e Aventura">
+          <div class="cat-card__overlay"></div>
+          <div class="cat-card__info">
+            <h3 class="cat-card__name">Motor &amp; Aventura</h3>
+            <span class="cat-card__arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <a href="luxo-exclusivo.html" class="cat-card" style="background-image:url('assets/images/luxo-exclusivo.jpg');--accent:#7B2D8B" aria-label="Luxo e Exclusivo">
+          <div class="cat-card__overlay"></div>
+          <div class="cat-card__info">
+            <h3 class="cat-card__name">Luxo &amp; Exclusivo</h3>
+            <span class="cat-card__arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <a href="roteiros-destinos.html" class="cat-card" style="background-image:url('assets/images/roteiros-destinos.jpg');--accent:#E8006A" aria-label="Roteiros e Destinos">
+          <div class="cat-card__overlay"></div>
+          <div class="cat-card__info">
+            <h3 class="cat-card__name">Roteiros &amp; Destinos</h3>
+            <span class="cat-card__arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+
+          <div class="footer__col">
+            <a href="index.html" class="footer__logo" aria-label="Monreal Tours — início">
+              <img src="assets/images/logo.svg" alt="Monreal Tours" height="40">
+            </a>
+            <p>Desde 1970 realizando viagens inesquecíveis com credibilidade e sofisticação.</p>
+          </div>
+
+          <div class="footer__col">
+            <p class="footer__col-title">Experiências</p>
+            <a href="neve-ski.html">Neve &amp; Ski</a>
+            <a href="nautico-kite.html">Náutico &amp; Kite</a>
+            <a href="motor-aventura.html">Motor &amp; Aventura</a>
+            <a href="luxo-exclusivo.html">Luxo &amp; Exclusivo</a>
+            <a href="roteiros-destinos.html">Roteiros &amp; Destinos</a>
+          </div>
+
+          <div class="footer__col">
+            <p class="footer__col-title">Redes &amp; Contato</p>
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://wa.me" target="_blank" rel="noopener">WhatsApp</a>
+            <address>contato@monrealtours.com.br</address>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__bottom-inner">
+          <p class="footer__copyright">© 2026 Monreal Tours. Todos os direitos reservados.</p>
+          <p class="footer__copyright"><a href="sobre.html" style="color:inherit">Sobre nós</a> &nbsp;·&nbsp; <a href="contato.html" style="color:inherit">Contato</a></p>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+
+  <script>
+    // Intro splash — remove do DOM após a animação terminar
+    (function () {
+      var intro = document.getElementById('intro');
+      if (!intro) return;
+      // 3.2s delay + 1s fade + 0.2s buffer = 4.4s
+      setTimeout(function () {
+        intro.remove();
+        document.body.classList.remove('intro-active');
+      }, 4400);
+    })();
+
+    // Nav dropdown — Experiências
+    (function () {
+      var wrapper = document.querySelector('.nav-has-dropdown');
+      if (!wrapper) return;
+
+      var trigger  = wrapper.querySelector('.nav-dropdown-trigger');
+      var dropdown = document.getElementById('dropdown-experiencias');
+      var nub      = document.getElementById('nav-nub');
+      var items    = wrapper.querySelectorAll('.nav-dropdown__item');
+      var slides   = wrapper.querySelectorAll('.nav-drop-slide');
+
+      var closeTimer = null;
+
+      function positionNub() {
+        var tRect = trigger.getBoundingClientRect();
+        var dRect = dropdown.getBoundingClientRect();
+        nub.style.left = (tRect.left + tRect.width / 2 - dRect.left) + 'px';
+      }
+
+      function openDropdown() {
+        clearTimeout(closeTimer);
+        wrapper.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+        positionNub();
+      }
+
+      function scheduleClose() {
+        clearTimeout(closeTimer);
+        closeTimer = setTimeout(function () {
+          wrapper.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+        }, 150);
+      }
+
+      wrapper.addEventListener('mouseenter', openDropdown);
+      wrapper.addEventListener('mouseleave', scheduleClose);
+      dropdown.addEventListener('mouseenter', function () { clearTimeout(closeTimer); });
+      dropdown.addEventListener('mouseleave', scheduleClose);
+
+      items.forEach(function (item) {
+        item.addEventListener('mouseenter', function () {
+          var cat = item.dataset.cat;
+          items.forEach(function (i) { i.classList.remove('is-active'); });
+          item.classList.add('is-active');
+          slides.forEach(function (s) {
+            s.classList.toggle('is-active', s.dataset.cat === cat);
+          });
+        });
+      });
+    })();
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('is-open');
+      mobileNav.classList.toggle('is-open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Fecha o menu ao clicar em um link
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('is-open');
+        mobileNav.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
+</html>
