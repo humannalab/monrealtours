@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sobre a Monreal Tours — Mais de 50 anos realizando viagens inesquecíveis com credibilidade e sofisticação.">
+  <title>Sobre — Monreal Tours</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body { background-color: var(--color-off-white); }
+
+    /* Timeline */
+    .sobre-historia { padding: 6rem 0; background: var(--color-off-white); }
+    .sobre-historia__intro { max-width: 680px; margin-bottom: 5rem; }
+    .sobre-historia__intro p { font-size: 1.15rem; line-height: 1.8; color: var(--color-text); margin-bottom: 1.2rem; }
+
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--color-primary); opacity: 0.2; }
+    .timeline__item { position: relative; padding: 0 0 3rem 2.5rem; }
+    .timeline__item:last-child { padding-bottom: 0; }
+    .timeline__dot { position: absolute; left: -0.4rem; top: 0.35rem; width: 0.8rem; height: 0.8rem; background: var(--color-primary); }
+    .timeline__year { font-family: var(--font-body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 0.4rem; }
+    .timeline__title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem; }
+    .timeline__text { font-size: 0.95rem; line-height: 1.7; color: var(--color-text); max-width: 560px; }
+
+    /* Propósito */
+    .sobre-proposito { padding: 6rem 0; background: var(--color-primary); }
+    .sobre-proposito__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 3rem; }
+    .sobre-proposito__eyebrow { font-family: var(--font-body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-bottom: 3rem; }
+    .sobre-proposito__item { }
+    .sobre-proposito__label { font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.75rem; }
+    .sobre-proposito__text { font-family: var(--font-display); font-size: 1.35rem; font-weight: 400; color: #fff; line-height: 1.5; }
+
+    /* Eixos */
+    .sobre-eixos { padding: 6rem 0; background: var(--color-off-white); }
+    .sobre-eixos__title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: var(--color-primary); margin-bottom: 3rem; }
+    .sobre-eixos__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+    .sobre-eixos__item { border-top: 1px solid rgba(0,20,137,0.15); padding-top: 1.5rem; }
+    .sobre-eixos__num { font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.1em; color: rgba(0,20,137,0.35); margin-bottom: 0.75rem; }
+    .sobre-eixos__name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem; }
+    .sobre-eixos__desc { font-size: 0.85rem; line-height: 1.65; color: var(--color-text); }
+
+    /* CTA sobre */
+    .sobre-cta { padding: 6rem 0; background: var(--color-primary); text-align: center; }
+    .sobre-cta__title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .sobre-cta__sub { font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; }
+
+    @media (max-width: 900px) {
+      .sobre-proposito__grid { grid-template-columns: 1fr; gap: 2rem; }
+      .sobre-eixos__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .sobre-eixos__grid { grid-template-columns: 1fr; }
+      .timeline { padding-left: 1.25rem; }
+      .timeline__item { padding-left: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo" aria-label="Monreal Tours — início">
+          <img src="assets/images/logo.svg" alt="Monreal Tours" height="36">
+        </a>
+        <nav class="header__nav" aria-label="Navegação principal">
+          <div class="nav-has-dropdown">
+            <button class="nav-dropdown-trigger" aria-expanded="false" aria-controls="dropdown-experiencias">
+              Experiências
+              <svg class="nav-dropdown-trigger__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="nav-dropdown" id="dropdown-experiencias" role="menu">
+              <div class="nav-dropdown__nub" id="nav-nub"></div>
+              <div class="nav-dropdown__inner">
+                <ul class="nav-dropdown__list">
+                  <li><a href="neve-ski.html" class="nav-dropdown__item" data-cat="neve-ski" style="--accent:#00A0D2" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Neve &amp; Ski</span>
+                      <span class="nav-dropdown__item-desc">Europa, EUA, Canadá e Andorra</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="nautico-kite.html" class="nav-dropdown__item" data-cat="nautico-kite" style="--accent:#00A878" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Náutico &amp; Kite</span>
+                      <span class="nav-dropdown__item-desc">Cruzeiros, vela e esportes aquáticos</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="motor-aventura.html" class="nav-dropdown__item" data-cat="motor-aventura" style="--accent:#F47920" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Motor &amp; Aventura</span>
+                      <span class="nav-dropdown__item-desc">Rally, off-road e expedições</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="luxo-exclusivo.html" class="nav-dropdown__item" data-cat="luxo-exclusivo" style="--accent:#7B2D8B" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Luxo &amp; Exclusivo</span>
+                      <span class="nav-dropdown__item-desc">Experiências premium e personalizadas</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="roteiros-destinos.html" class="nav-dropdown__item" data-cat="roteiros-destinos" style="--accent:#E8006A" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Roteiros &amp; Destinos</span>
+                      <span class="nav-dropdown__item-desc">Pacotes completos pelo mundo</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                </ul>
+                <div class="nav-dropdown__preview">
+                  <div class="nav-drop-slide is-active" data-cat="neve-ski" style="background-image:url('assets/images/ski.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="nautico-kite" style="background-image:url('assets/images/nautico-kite.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="motor-aventura" style="background-image:url('assets/images/motor-aventura.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="luxo-exclusivo" style="background-image:url('assets/images/luxo-exclusivo.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="roteiros-destinos" style="background-image:url('assets/images/roteiros-destinos.jpg')"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="sobre.html">Sobre</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+        <a href="contato.html" class="header__cta btn-shiny">Fale conosco</a>
+        <button class="header__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="header__mobile-nav" id="mobile-nav" aria-label="Menu mobile">
+      <a href="neve-ski.html">Neve &amp; Ski</a>
+      <a href="nautico-kite.html">Náutico &amp; Kite</a>
+      <a href="motor-aventura.html">Motor &amp; Aventura</a>
+      <a href="luxo-exclusivo.html">Luxo &amp; Exclusivo</a>
+      <a href="roteiros-destinos.html">Roteiros &amp; Destinos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="contato.html" class="header__cta btn-shiny">Fale conosco</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero__bg" style="background-image:url('assets/images/roteiros-destinos.jpg')" aria-hidden="true"></div>
+    <div class="page-hero__overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero__content">
+        <p class="page-hero__eyebrow">Monreal Tours</p>
+        <h1 class="page-hero__title">Mais de 50 anos<br>de viagens reais.</h1>
+        <p class="page-hero__subtitle">Uma história construída viagem a viagem, cliente a cliente.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre-historia">
+    <div class="container">
+      <div class="sobre-historia__intro">
+        <p>A Monreal Tours nasceu em 1970 da paixão de um grupo de brasileiros que acreditava que viajar bem é uma arte — e que merece ser praticada com cuidado, conhecimento e responsabilidade.</p>
+        <p>Em mais de cinco décadas, construímos uma das agências mais respeitadas do Brasil no segmento de viagens especializadas, atendendo milhares de clientes que voltam — e indicam.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <p class="timeline__year">1970</p>
+          <h2 class="timeline__title">Fundação</h2>
+          <p class="timeline__text">A Monreal Tours abre suas portas em São Paulo, com foco inicial em viagens de esqui para a Europa. Os primeiros grupos partem para os Alpes franceses e suíços.</p>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <p class="timeline__year">Anos 80</p>
+          <h2 class="timeline__title">Expansão náutica</h2>
+          <p class="timeline__text">A agência incorpora viagens náuticas ao portfólio — cruzeiros, vela e os primeiros grupos de kitesurf no litoral nordestino, pioneirismo no Brasil.</p>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <p class="timeline__year">Anos 90</p>
+          <h2 class="timeline__title">Motor &amp; Aventura</h2>
+          <p class="timeline__text">Expedições de moto e off-road entram na programação. A Monreal organiza as primeiras travessias brasileiras em grupos pelo Marrocos e pela Patagônia.</p>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <p class="timeline__year">Anos 2000</p>
+          <h2 class="timeline__title">Linha Luxo &amp; Exclusivo</h2>
+          <p class="timeline__text">Criação da linha de viagens premium, com atendimento personalizado, acesso a propriedades exclusivas e parcerias com os principais hotéis cinco estrelas do mundo.</p>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <p class="timeline__year">Hoje</p>
+          <h2 class="timeline__title">Cinco décadas, mesma essência</h2>
+          <p class="timeline__text">Com cinco categorias de viagem, presença em todos os continentes e uma equipe apaixonada por viagens, a Monreal segue levando brasileiros a experiências que definem histórias.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre-proposito">
+    <div class="container">
+      <p class="sobre-proposito__eyebrow">Nossa razão de existir</p>
+      <div class="sobre-proposito__grid">
+        <div class="sobre-proposito__item">
+          <p class="sobre-proposito__label">Propósito</p>
+          <p class="sobre-proposito__text">Transformar a experiência de viajar em algo que vai além do destino — criando memórias que duram uma vida.</p>
+        </div>
+        <div class="sobre-proposito__item">
+          <p class="sobre-proposito__label">Visão</p>
+          <p class="sobre-proposito__text">Ser a agência de referência no Brasil para quem viaja com paixão, critério e gosto pelo extraordinário.</p>
+        </div>
+        <div class="sobre-proposito__item">
+          <p class="sobre-proposito__label">Missão</p>
+          <p class="sobre-proposito__text">Oferecer experiências de viagem únicas, com excelência operacional e relação humana genuína em cada etapa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre-eixos">
+    <div class="container">
+      <h2 class="sobre-eixos__title">O que nos guia</h2>
+      <div class="sobre-eixos__grid">
+        <div class="sobre-eixos__item">
+          <p class="sobre-eixos__num">01</p>
+          <p class="sobre-eixos__name">Credibilidade</p>
+          <p class="sobre-eixos__desc">Mais de 50 anos de histórico positivo com clientes que voltam e indicam.</p>
+        </div>
+        <div class="sobre-eixos__item">
+          <p class="sobre-eixos__num">02</p>
+          <p class="sobre-eixos__name">Especialização</p>
+          <p class="sobre-eixos__desc">Cada categoria de viagem é operada por especialistas com experiência real nos destinos.</p>
+        </div>
+        <div class="sobre-eixos__item">
+          <p class="sobre-eixos__num">03</p>
+          <p class="sobre-eixos__name">Personalização</p>
+          <p class="sobre-eixos__desc">Não existe viagem padrão. Cada roteiro é pensado para quem vai viver a experiência.</p>
+        </div>
+        <div class="sobre-eixos__item">
+          <p class="sobre-eixos__num">04</p>
+          <p class="sobre-eixos__name">Sofisticação</p>
+          <p class="sobre-eixos__desc">Atenção aos detalhes, parceiros selecionados e padrão de qualidade inegociável.</p>
+        </div>
+        <div class="sobre-eixos__item">
+          <p class="sobre-eixos__num">05</p>
+          <p class="sobre-eixos__name">Relação humana</p>
+          <p class="sobre-eixos__desc">Atendimento próximo, consultores que conhecem os destinos e suporte real em viagem.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre-cta">
+    <div class="container">
+      <h2 class="sobre-cta__title">Pronto para a próxima viagem?</h2>
+      <p class="sobre-cta__sub">Nossa equipe está pronta para montar o roteiro ideal para você.</p>
+      <a href="https://wa.me/5511999850975?text=Olá!%20Quero%20saber%20mais%20sobre%20a%20Monreal%20Tours." target="_blank" rel="noopener" class="btn-whatsapp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        Falar pelo WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__wordmark" aria-hidden="true">
+      <span class="footer__wordmark-text">MONREAL TOURS</span>
+    </div>
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col">
+            <a href="index.html" class="footer__logo" aria-label="Monreal Tours — início">
+              <img src="assets/images/logo.svg" alt="Monreal Tours" height="40">
+            </a>
+            <p>Desde 1970 realizando viagens inesquecíveis com credibilidade e sofisticação.</p>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-title">Experiências</p>
+            <a href="neve-ski.html">Neve &amp; Ski</a>
+            <a href="nautico-kite.html">Náutico &amp; Kite</a>
+            <a href="motor-aventura.html">Motor &amp; Aventura</a>
+            <a href="luxo-exclusivo.html">Luxo &amp; Exclusivo</a>
+            <a href="roteiros-destinos.html">Roteiros &amp; Destinos</a>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-title">Redes &amp; Contato</p>
+            <a href="https://instagram.com/monrealtours" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://facebook.com/monrealtours" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://wa.me/5511999850975" target="_blank" rel="noopener">WhatsApp (11) 99985-0975</a>
+            <address>contato@monrealtours.com.br</address>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__bottom-inner">
+          <p class="footer__copyright">© 2026 Monreal Tours. Todos os direitos reservados.</p>
+          <p class="footer__copyright"><a href="sobre.html" style="color:inherit">Sobre nós</a> &nbsp;·&nbsp; <a href="contato.html" style="color:inherit">Contato</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var wrapper = document.querySelector('.nav-has-dropdown');
+      if (!wrapper) return;
+      var trigger = wrapper.querySelector('.nav-dropdown-trigger');
+      var dropdown = document.getElementById('dropdown-experiencias');
+      var nub = document.getElementById('nav-nub');
+      var items = wrapper.querySelectorAll('.nav-dropdown__item');
+      var slides = wrapper.querySelectorAll('.nav-drop-slide');
+      var closeTimer = null;
+      function positionNub() { var t = trigger.getBoundingClientRect(); var d = dropdown.getBoundingClientRect(); nub.style.left = (t.left + t.width / 2 - d.left) + 'px'; }
+      function openDropdown() { clearTimeout(closeTimer); wrapper.classList.add('is-open'); trigger.setAttribute('aria-expanded', 'true'); positionNub(); }
+      function scheduleClose() { clearTimeout(closeTimer); closeTimer = setTimeout(function () { wrapper.classList.remove('is-open'); trigger.setAttribute('aria-expanded', 'false'); }, 150); }
+      wrapper.addEventListener('mouseenter', openDropdown);
+      wrapper.addEventListener('mouseleave', scheduleClose);
+      dropdown.addEventListener('mouseenter', function () { clearTimeout(closeTimer); });
+      dropdown.addEventListener('mouseleave', scheduleClose);
+      items.forEach(function (item) { item.addEventListener('mouseenter', function () { var cat = item.dataset.cat; items.forEach(function (i) { i.classList.remove('is-active'); }); item.classList.add('is-active'); slides.forEach(function (s) { s.classList.toggle('is-active', s.dataset.cat === cat); }); }); });
+    })();
+    var hamburger = document.getElementById('hamburger');
+    var mobileNav = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', function () { var open = hamburger.classList.toggle('is-open'); mobileNav.classList.toggle('is-open', open); hamburger.setAttribute('aria-expanded', open); });
+    mobileNav.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', function () { hamburger.classList.remove('is-open'); mobileNav.classList.remove('is-open'); hamburger.setAttribute('aria-expanded', 'false'); }); });
+  </script>
+</body>
+</html>

@@ -798,6 +798,153 @@
         height: 220px;
       }
     }
+
+    /* ============================================
+       DESTAQUES
+       ============================================ */
+    .destaques { background: var(--color-off-white); padding: 5rem 0; }
+    .destaques__header { margin-bottom: 3rem; }
+    .destaques__label {
+      font-family: var(--font-body); font-size: 0.7rem; font-weight: 400;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--color-gray); margin-bottom: 0.5rem;
+    }
+    .destaques__title {
+      font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 700; color: var(--color-primary);
+    }
+    .destaques__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .destaque-card { background: var(--color-white); overflow: hidden; display: flex; flex-direction: column; }
+    .destaque-card__image {
+      height: 220px; position: relative; overflow: hidden;
+      background: var(--bg, linear-gradient(135deg, #001489, #00A0D2));
+    }
+    .destaque-card__badge {
+      position: absolute; top: 1rem; left: 1rem;
+      font-family: var(--font-body); font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--color-white); background: rgba(0,0,0,0.35);
+      padding: 0.3rem 0.7rem; backdrop-filter: blur(4px);
+    }
+    .destaque-card__body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .destaque-card__body h3 {
+      font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
+      color: var(--color-primary); margin-bottom: 0.6rem;
+    }
+    .destaque-card__body p { font-size: 0.9rem; color: var(--color-gray); font-weight: 300; margin-bottom: 1.5rem; flex: 1; }
+
+    /* ============================================
+       SOBRE HOME
+       ============================================ */
+    .sobre-home { background: var(--color-white); padding: 7rem 0; }
+    .sobre-home__layout { display: grid; grid-template-columns: 1fr 280px; gap: 5rem; align-items: center; }
+    .sobre-home__label {
+      font-family: var(--font-body); font-size: 0.7rem; font-weight: 400;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--color-gray); margin-bottom: 1rem;
+    }
+    .sobre-home__title {
+      font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700; color: var(--color-primary); margin-bottom: 1.5rem; line-height: 1.1;
+    }
+    .sobre-home__text {
+      font-size: 1rem; line-height: 1.8; color: var(--color-dark);
+      font-weight: 300; margin-bottom: 2.5rem; max-width: 60ch;
+    }
+    .sobre-home__stat { text-align: center; }
+    .sobre-home__number {
+      font-family: var(--font-display); font-size: clamp(5rem, 12vw, 9rem);
+      font-weight: 900; color: var(--color-primary); line-height: 1; display: block;
+    }
+    .sobre-home__stat-label {
+      font-family: var(--font-body); font-size: 0.8rem; font-weight: 400;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--color-gray); display: block; margin-top: 0.5rem;
+    }
+
+    /* ============================================
+       DEPOIMENTOS
+       ============================================ */
+    .depoimentos { background: var(--color-off-white); padding: 5rem 0; }
+    .depoimentos__header { margin-bottom: 3rem; }
+    .depoimentos__label {
+      font-family: var(--font-body); font-size: 0.7rem; font-weight: 400;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-gray); margin-bottom: 0.5rem;
+    }
+    .depoimentos__title {
+      font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 700; color: var(--color-primary);
+    }
+    .depoimentos__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .depoimento {
+      background: var(--color-white); padding: 2rem 1.8rem;
+      position: relative; display: flex; flex-direction: column;
+    }
+    .depoimento__quote {
+      font-family: var(--font-display); font-size: 5rem;
+      color: var(--color-primary); line-height: 0.6;
+      display: block; margin-bottom: 1.2rem; opacity: 0.4;
+    }
+    .depoimento__text {
+      font-size: 0.95rem; font-weight: 300; line-height: 1.8;
+      color: var(--color-dark); flex: 1; margin-bottom: 1.5rem;
+    }
+    .depoimento__author { display: flex; flex-direction: column; gap: 2px; }
+    .depoimento__name { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--color-primary); }
+    .depoimento__location { font-size: 0.8rem; font-weight: 300; color: var(--color-gray); }
+
+    /* ============================================
+       FORMULÁRIO DE CONTATO
+       ============================================ */
+    .contato-form { background: var(--color-primary); padding: 6rem 0; }
+    .contato-form__layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; align-items: start; }
+    .contato-form__label {
+      font-family: var(--font-body); font-size: 0.7rem; font-weight: 400;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-bottom: 0.75rem;
+    }
+    .contato-form__title {
+      font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700; color: var(--color-white); margin-bottom: 1.5rem; line-height: 1.1;
+    }
+    .contato-form__desc { font-size: 0.95rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.65); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group--full { grid-column: 1 / -1; }
+    .form-group label {
+      font-family: var(--font-body); font-size: 0.72rem; font-weight: 400;
+      letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5);
+    }
+    .form-group input,
+    .form-group textarea {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--color-white);
+      padding: 0.85rem 1rem;
+      font-family: var(--font-body); font-size: 0.95rem; font-weight: 300;
+      border-radius: 0;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .form-submit { margin-top: 1.5rem; }
+
+    @media (max-width: 768px) {
+      .destaques__grid,
+      .depoimentos__grid { grid-template-columns: 1fr; }
+      .sobre-home__layout { grid-template-columns: 1fr; gap: 2rem; }
+      .sobre-home__stat { text-align: left; }
+      .contato-form__layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body class="intro-active">
@@ -1004,9 +1151,166 @@
   </section>
 
   <!-- ============================================
+       DESTAQUES
+       ============================================ -->
+  <section class="destaques" id="destaques" aria-label="Destaques">
+    <div class="container">
+      <header class="destaques__header">
+        <p class="destaques__label">Em evidência</p>
+        <h2 class="destaques__title">Destaques</h2>
+      </header>
+      <div class="destaques__grid">
+
+        <article class="destaque-card">
+          <div class="destaque-card__image" style="--bg: linear-gradient(135deg, #001489 0%, #00A0D2 100%)">
+            <span class="destaque-card__badge">Temporada 2026</span>
+          </div>
+          <div class="destaque-card__body">
+            <h3>Neve &amp; Ski na Europa</h3>
+            <p>Os melhores resorts da França, Suíça e Áustria com pacotes completos para a temporada 2026.</p>
+            <a href="neve-ski.html" class="btn-shiny">Ver pacotes</a>
+          </div>
+        </article>
+
+        <article class="destaque-card">
+          <div class="destaque-card__image" style="--bg: linear-gradient(135deg, #001489 0%, #7B2D8B 100%)">
+            <span class="destaque-card__badge">Exclusivo</span>
+          </div>
+          <div class="destaque-card__body">
+            <h3>Club Med — Oferta Especial</h3>
+            <p>Condições exclusivas nos melhores resorts Club Med para compras realizadas até julho/2026.</p>
+            <a href="luxo-exclusivo.html" class="btn-shiny">Saiba mais</a>
+          </div>
+        </article>
+
+        <article class="destaque-card">
+          <div class="destaque-card__image" style="--bg: linear-gradient(135deg, #001489 0%, #00A878 100%)">
+            <span class="destaque-card__badge">Novidade</span>
+          </div>
+          <div class="destaque-card__body">
+            <h3>Kite em Mui Ne &amp; Tarifa</h3>
+            <p>Roteiros de kitesurf nos destinos mais ventosos do mundo, com suporte completo da Monreal.</p>
+            <a href="nautico-kite.html" class="btn-shiny">Explorar</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SOBRE A MONREAL
+       ============================================ -->
+  <section class="sobre-home" id="sobre-home" aria-label="Sobre a Monreal Tours">
+    <div class="container">
+      <div class="sobre-home__layout">
+        <div>
+          <p class="sobre-home__label">Quem somos</p>
+          <h2 class="sobre-home__title">Desde 1970,<br>realizando sonhos</h2>
+          <p class="sobre-home__text">Há mais de 50 anos, a Monreal Tours transforma sonhos em viagens inesquecíveis. Com experiência, parceiros confiáveis e atenção a cada detalhe, garantimos que sua única preocupação seja aproveitar.</p>
+          <p class="sobre-home__text">Nossa missão é simples: cumprir a promessa sem stress. Do primeiro contato ao retorno em casa, estamos com você em cada etapa da jornada.</p>
+          <a href="sobre.html" class="btn-shiny">Nossa história</a>
+        </div>
+        <div class="sobre-home__stat" aria-label="Mais de 50 anos de experiência">
+          <span class="sobre-home__number">50+</span>
+          <span class="sobre-home__stat-label">anos de experiência</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       DEPOIMENTOS
+       ============================================ -->
+  <section class="depoimentos" id="depoimentos" aria-label="Depoimentos de clientes">
+    <div class="container">
+      <header class="depoimentos__header">
+        <p class="depoimentos__label">Quem viajou com a gente</p>
+        <h2 class="depoimentos__title">O que nossos clientes dizem</h2>
+      </header>
+      <div class="depoimentos__grid">
+
+        <article class="depoimento">
+          <span class="depoimento__quote" aria-hidden="true">"</span>
+          <p class="depoimento__text">A Monreal organizou nossa viagem de neve para a Suíça com uma atenção que não encontramos em nenhuma outra agência. Cada detalhe foi cuidado, desde o traslado até o resort. Voltamos apaixonados e já estamos planejando a próxima.</p>
+          <footer class="depoimento__author">
+            <span class="depoimento__name">Maria Fernanda S.</span>
+            <span class="depoimento__location">São Paulo, SP</span>
+          </footer>
+        </article>
+
+        <article class="depoimento">
+          <span class="depoimento__quote" aria-hidden="true">"</span>
+          <p class="depoimento__text">Viajamos em família para o Club Med e foi a melhor decisão que tomamos. A Monreal conseguiu condições especiais e ainda acompanhou todo o processo. Organização impecável — exatamente o que precisávamos com crianças.</p>
+          <footer class="depoimento__author">
+            <span class="depoimento__name">Carlos &amp; Ana R.</span>
+            <span class="depoimento__location">Rio de Janeiro, RJ</span>
+          </footer>
+        </article>
+
+        <article class="depoimento">
+          <span class="depoimento__quote" aria-hidden="true">"</span>
+          <p class="depoimento__text">Sou cliente há mais de 15 anos. A confiança que tenho na Monreal é difícil de explicar — eles conhecem meu gosto, antecipam o que preciso e nunca me decepcionaram. É como ter um amigo especialista em viagens.</p>
+          <footer class="depoimento__author">
+            <span class="depoimento__name">Roberto M.</span>
+            <span class="depoimento__location">Campinas, SP</span>
+          </footer>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FORMULÁRIO DE CONTATO
+       ============================================ -->
+  <section class="contato-form" id="contato-home" aria-label="Formulário de contato">
+    <div class="container">
+      <div class="contato-form__layout">
+        <div>
+          <p class="contato-form__label">Fale conosco</p>
+          <h2 class="contato-form__title">Planeje sua próxima viagem</h2>
+          <p class="contato-form__desc">Nossa equipe está pronta para criar a viagem ideal para você. Conte nos o que sonha e a gente cuida do resto.</p>
+        </div>
+        <form action="https://formspree.io/f/ACTION_URL" method="POST">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999">
+            </div>
+            <div class="form-group">
+              <label for="categoria">Experiência de interesse</label>
+              <input type="text" id="categoria" name="categoria" placeholder="Neve & Ski, Náutico...">
+            </div>
+            <div class="form-group form-group--full">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Conte-nos sobre sua viagem dos sonhos..." required></textarea>
+            </div>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn-shiny">Enviar mensagem</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
        FOOTER
        ============================================ -->
   <footer class="footer">
+
+    <div class="footer__wordmark" aria-hidden="true">
+      <span class="footer__wordmark-text">MONREAL TOURS</span>
+    </div>
 
     <div class="footer__top">
       <div class="container">
@@ -1030,9 +1334,9 @@
 
           <div class="footer__col">
             <p class="footer__col-title">Redes &amp; Contato</p>
-            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
-            <a href="https://wa.me" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://instagram.com/monrealtours" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://facebook.com/monrealtours" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://wa.me/5511999850975" target="_blank" rel="noopener">WhatsApp (11) 99985-0975</a>
             <address>contato@monrealtours.com.br</address>
           </div>
 

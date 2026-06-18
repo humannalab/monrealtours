@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contato — Monreal Tours. Fale com nossa equipe pelo WhatsApp ou formulário. Estamos prontos para planejar sua próxima viagem.">
+  <title>Contato — Monreal Tours</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body { background-color: var(--color-off-white); }
+
+    .contato-section { padding: 7rem 0; }
+    .contato-section__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+
+    .contato-info__eyebrow { font-family: var(--font-body); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary); opacity: 0.5; margin-bottom: 1.5rem; }
+    .contato-info__title { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; color: var(--color-primary); line-height: 1.2; margin-bottom: 1.5rem; }
+    .contato-info__text { font-size: 1rem; line-height: 1.8; color: var(--color-text); margin-bottom: 2.5rem; }
+
+    .contato-canais { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 3rem; }
+    .contato-canal { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--color-primary); font-size: 0.95rem; transition: opacity 0.2s; }
+    .contato-canal:hover { opacity: 0.7; }
+    .contato-canal__icon { width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; background: var(--color-primary); flex-shrink: 0; }
+    .contato-canal__icon svg { width: 1.1rem; height: 1.1rem; fill: #fff; }
+    .contato-canal__label { font-weight: 500; display: block; }
+    .contato-canal__value { font-weight: 300; font-size: 0.9rem; color: var(--color-text); }
+
+    /* Form */
+    .contato-form { background: #fff; padding: 3rem; border: 1px solid rgba(0,20,137,0.08); }
+    .contato-form__title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem; }
+    .contato-form__sub { font-size: 0.9rem; color: var(--color-text); margin-bottom: 2rem; line-height: 1.5; }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 0.5rem; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea { width: 100%; padding: 0.85rem 1rem; border: 1px solid rgba(0,20,137,0.18); background: var(--color-off-white); font-family: var(--font-body); font-size: 0.95rem; color: var(--color-primary); outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--color-primary); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-submit { margin-top: 1.5rem; }
+    .form-submit button { width: 100%; padding: 1rem; background: var(--color-primary); color: #fff; border: none; font-family: var(--font-body); font-size: 0.9rem; font-weight: 400; letter-spacing: 0.06em; cursor: pointer; transition: background 0.2s; }
+    .form-submit button:hover { background: #001785; }
+
+    @media (max-width: 900px) {
+      .contato-section__grid { grid-template-columns: 1fr; gap: 4rem; }
+    }
+    @media (max-width: 600px) {
+      .contato-form { padding: 2rem 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo" aria-label="Monreal Tours — início">
+          <img src="assets/images/logo.svg" alt="Monreal Tours" height="36">
+        </a>
+        <nav class="header__nav" aria-label="Navegação principal">
+          <div class="nav-has-dropdown">
+            <button class="nav-dropdown-trigger" aria-expanded="false" aria-controls="dropdown-experiencias">
+              Experiências
+              <svg class="nav-dropdown-trigger__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="nav-dropdown" id="dropdown-experiencias" role="menu">
+              <div class="nav-dropdown__nub" id="nav-nub"></div>
+              <div class="nav-dropdown__inner">
+                <ul class="nav-dropdown__list">
+                  <li><a href="neve-ski.html" class="nav-dropdown__item" data-cat="neve-ski" style="--accent:#00A0D2" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Neve &amp; Ski</span>
+                      <span class="nav-dropdown__item-desc">Europa, EUA, Canadá e Andorra</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="nautico-kite.html" class="nav-dropdown__item" data-cat="nautico-kite" style="--accent:#00A878" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Náutico &amp; Kite</span>
+                      <span class="nav-dropdown__item-desc">Cruzeiros, vela e esportes aquáticos</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="motor-aventura.html" class="nav-dropdown__item" data-cat="motor-aventura" style="--accent:#F47920" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Motor &amp; Aventura</span>
+                      <span class="nav-dropdown__item-desc">Rally, off-road e expedições</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="luxo-exclusivo.html" class="nav-dropdown__item" data-cat="luxo-exclusivo" style="--accent:#7B2D8B" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Luxo &amp; Exclusivo</span>
+                      <span class="nav-dropdown__item-desc">Experiências premium e personalizadas</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="roteiros-destinos.html" class="nav-dropdown__item" data-cat="roteiros-destinos" style="--accent:#E8006A" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Roteiros &amp; Destinos</span>
+                      <span class="nav-dropdown__item-desc">Pacotes completos pelo mundo</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                </ul>
+                <div class="nav-dropdown__preview">
+                  <div class="nav-drop-slide is-active" data-cat="neve-ski" style="background-image:url('assets/images/ski.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="nautico-kite" style="background-image:url('assets/images/nautico-kite.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="motor-aventura" style="background-image:url('assets/images/motor-aventura.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="luxo-exclusivo" style="background-image:url('assets/images/luxo-exclusivo.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="roteiros-destinos" style="background-image:url('assets/images/roteiros-destinos.jpg')"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="sobre.html">Sobre</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+        <a href="contato.html" class="header__cta btn-shiny">Fale conosco</a>
+        <button class="header__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="header__mobile-nav" id="mobile-nav" aria-label="Menu mobile">
+      <a href="neve-ski.html">Neve &amp; Ski</a>
+      <a href="nautico-kite.html">Náutico &amp; Kite</a>
+      <a href="motor-aventura.html">Motor &amp; Aventura</a>
+      <a href="luxo-exclusivo.html">Luxo &amp; Exclusivo</a>
+      <a href="roteiros-destinos.html">Roteiros &amp; Destinos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="contato.html" class="header__cta btn-shiny">Fale conosco</a>
+    </nav>
+  </header>
+
+  <section class="contato-section">
+    <div class="container">
+      <div class="contato-section__grid">
+
+        <div class="contato-info">
+          <p class="contato-info__eyebrow">Fale conosco</p>
+          <h1 class="contato-info__title">Vamos planejar sua próxima viagem?</h1>
+          <p class="contato-info__text">Nossa equipe está pronta para te ajudar a encontrar a experiência certa — seja uma viagem de neve, uma expedição off-road, um cruzeiro exclusivo ou um roteiro personalizado pelo mundo. Escolha o canal de sua preferência.</p>
+
+          <div class="contato-canais">
+            <a href="https://wa.me/5511999850975" target="_blank" rel="noopener" class="contato-canal">
+              <div class="contato-canal__icon">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              </div>
+              <div>
+                <span class="contato-canal__label">WhatsApp</span>
+                <span class="contato-canal__value">(11) 99985-0975</span>
+              </div>
+            </a>
+            <a href="https://instagram.com/monrealtours" target="_blank" rel="noopener" class="contato-canal">
+              <div class="contato-canal__icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+              </div>
+              <div>
+                <span class="contato-canal__label">Instagram</span>
+                <span class="contato-canal__value">@monrealtours</span>
+              </div>
+            </a>
+            <a href="mailto:contato@monrealtours.com.br" class="contato-canal">
+              <div class="contato-canal__icon">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </div>
+              <div>
+                <span class="contato-canal__label">E-mail</span>
+                <span class="contato-canal__value">contato@monrealtours.com.br</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contato-form">
+          <h2 class="contato-form__title">Envie uma mensagem</h2>
+          <p class="contato-form__sub">Preencha o formulário e entraremos em contato em até 1 dia útil.</p>
+          <form action="ACTION_URL" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999">
+            </div>
+            <div class="form-group">
+              <label for="interesse">Interesse</label>
+              <select id="interesse" name="interesse">
+                <option value="">Selecione uma categoria</option>
+                <option value="neve-ski">Neve &amp; Ski</option>
+                <option value="nautico-kite">Náutico &amp; Kite</option>
+                <option value="motor-aventura">Motor &amp; Aventura</option>
+                <option value="luxo-exclusivo">Luxo &amp; Exclusivo</option>
+                <option value="roteiros-destinos">Roteiros &amp; Destinos</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre a viagem que você tem em mente..." required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit">Enviar mensagem</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__wordmark" aria-hidden="true">
+      <span class="footer__wordmark-text">MONREAL TOURS</span>
+    </div>
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col">
+            <a href="index.html" class="footer__logo" aria-label="Monreal Tours — início">
+              <img src="assets/images/logo.svg" alt="Monreal Tours" height="40">
+            </a>
+            <p>Desde 1970 realizando viagens inesquecíveis com credibilidade e sofisticação.</p>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-title">Experiências</p>
+            <a href="neve-ski.html">Neve &amp; Ski</a>
+            <a href="nautico-kite.html">Náutico &amp; Kite</a>
+            <a href="motor-aventura.html">Motor &amp; Aventura</a>
+            <a href="luxo-exclusivo.html">Luxo &amp; Exclusivo</a>
+            <a href="roteiros-destinos.html">Roteiros &amp; Destinos</a>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-title">Redes &amp; Contato</p>
+            <a href="https://instagram.com/monrealtours" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://facebook.com/monrealtours" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://wa.me/5511999850975" target="_blank" rel="noopener">WhatsApp (11) 99985-0975</a>
+            <address>contato@monrealtours.com.br</address>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__bottom-inner">
+          <p class="footer__copyright">© 2026 Monreal Tours. Todos os direitos reservados.</p>
+          <p class="footer__copyright"><a href="sobre.html" style="color:inherit">Sobre nós</a> &nbsp;·&nbsp; <a href="contato.html" style="color:inherit">Contato</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var wrapper = document.querySelector('.nav-has-dropdown');
+      if (!wrapper) return;
+      var trigger = wrapper.querySelector('.nav-dropdown-trigger');
+      var dropdown = document.getElementById('dropdown-experiencias');
+      var nub = document.getElementById('nav-nub');
+      var items = wrapper.querySelectorAll('.nav-dropdown__item');
+      var slides = wrapper.querySelectorAll('.nav-drop-slide');
+      var closeTimer = null;
+      function positionNub() { var t = trigger.getBoundingClientRect(); var d = dropdown.getBoundingClientRect(); nub.style.left = (t.left + t.width / 2 - d.left) + 'px'; }
+      function openDropdown() { clearTimeout(closeTimer); wrapper.classList.add('is-open'); trigger.setAttribute('aria-expanded', 'true'); positionNub(); }
+      function scheduleClose() { clearTimeout(closeTimer); closeTimer = setTimeout(function () { wrapper.classList.remove('is-open'); trigger.setAttribute('aria-expanded', 'false'); }, 150); }
+      wrapper.addEventListener('mouseenter', openDropdown);
+      wrapper.addEventListener('mouseleave', scheduleClose);
+      dropdown.addEventListener('mouseenter', function () { clearTimeout(closeTimer); });
+      dropdown.addEventListener('mouseleave', scheduleClose);
+      items.forEach(function (item) { item.addEventListener('mouseenter', function () { var cat = item.dataset.cat; items.forEach(function (i) { i.classList.remove('is-active'); }); item.classList.add('is-active'); slides.forEach(function (s) { s.classList.toggle('is-active', s.dataset.cat === cat); }); }); });
+    })();
+    var hamburger = document.getElementById('hamburger');
+    var mobileNav = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', function () { var open = hamburger.classList.toggle('is-open'); mobileNav.classList.toggle('is-open', open); hamburger.setAttribute('aria-expanded', open); });
+    mobileNav.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', function () { hamburger.classList.remove('is-open'); mobileNav.classList.remove('is-open'); hamburger.setAttribute('aria-expanded', 'false'); }); });
+  </script>
+</body>
+</html>

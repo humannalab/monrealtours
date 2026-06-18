@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Luxo & Exclusivo — Monreal Tours. Porque alguns momentos merecem o melhor. Experiências premium e personalizadas desde 1970.">
+  <title>Luxo &amp; Exclusivo — Monreal Tours</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body { background-color: var(--color-off-white); }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo" aria-label="Monreal Tours — início">
+          <img src="assets/images/logo.svg" alt="Monreal Tours" height="36">
+        </a>
+        <nav class="header__nav" aria-label="Navegação principal">
+          <div class="nav-has-dropdown">
+            <button class="nav-dropdown-trigger" aria-expanded="false" aria-controls="dropdown-experiencias">
+              Experiências
+              <svg class="nav-dropdown-trigger__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="nav-dropdown" id="dropdown-experiencias" role="menu">
+              <div class="nav-dropdown__nub" id="nav-nub"></div>
+              <div class="nav-dropdown__inner">
+                <ul class="nav-dropdown__list">
+                  <li><a href="neve-ski.html" class="nav-dropdown__item" data-cat="neve-ski" style="--accent:#00A0D2" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Neve &amp; Ski</span>
+                      <span class="nav-dropdown__item-desc">Europa, EUA, Canadá e Andorra</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="nautico-kite.html" class="nav-dropdown__item" data-cat="nautico-kite" style="--accent:#00A878" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Náutico &amp; Kite</span>
+                      <span class="nav-dropdown__item-desc">Cruzeiros, vela e esportes aquáticos</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="motor-aventura.html" class="nav-dropdown__item" data-cat="motor-aventura" style="--accent:#F47920" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Motor &amp; Aventura</span>
+                      <span class="nav-dropdown__item-desc">Rally, off-road e expedições</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="luxo-exclusivo.html" class="nav-dropdown__item" data-cat="luxo-exclusivo" style="--accent:#7B2D8B" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Luxo &amp; Exclusivo</span>
+                      <span class="nav-dropdown__item-desc">Experiências premium e personalizadas</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                  <li><a href="roteiros-destinos.html" class="nav-dropdown__item" data-cat="roteiros-destinos" style="--accent:#E8006A" role="menuitem">
+                    <span class="nav-dropdown__item-content">
+                      <span class="nav-dropdown__item-name">Roteiros &amp; Destinos</span>
+                      <span class="nav-dropdown__item-desc">Pacotes completos pelo mundo</span>
+                    </span><span class="nav-dropdown__item-arrow" aria-hidden="true">→</span>
+                  </a></li>
+                </ul>
+                <div class="nav-dropdown__preview">
+                  <div class="nav-drop-slide" data-cat="neve-ski" style="background-image:url('assets/images/ski.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="nautico-kite" style="background-image:url('assets/images/nautico-kite.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="motor-aventura" style="background-image:url('assets/images/motor-aventura.jpg')"></div>
+                  <div class="nav-drop-slide is-active" data-cat="luxo-exclusivo" style="background-image:url('assets/images/luxo-exclusivo.jpg')"></div>
+                  <div class="nav-drop-slide" data-cat="roteiros-destinos" style="background-image:url('assets/images/roteiros-destinos.jpg')"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="sobre.html">Sobre</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+        <a href="contato.html" class="header__cta btn-shiny">Fale conosco</a>
+        <button class="header__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="header__mobile-nav" id="mobile-nav" aria-label="Menu mobile">
+      <a href="neve-ski.html">Neve &amp; Ski</a>
+      <a href="nautico-kite.html">Náutico &amp; Kite</a>
+      <a href="motor-aventura.html">Motor &amp; Aventura</a>
+      <a href="luxo-exclusivo.html">Luxo &amp; Exclusivo</a>
+      <a href="roteiros-destinos.html">Roteiros &amp; Destinos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="contato.html" class="header__cta btn-shiny">Fale conosco</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero__bg" style="background-image:url('assets/images/luxo-exclusivo.jpg')" aria-hidden="true"></div>
+    <div class="page-hero__overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero__content">
+        <p class="page-hero__eyebrow">Monreal Tours — Experiências</p>
+        <h1 class="page-hero__title">Luxo &amp; Exclusivo</h1>
+        <p class="page-hero__subtitle">Porque alguns momentos merecem o melhor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-intro">
+    <div class="container">
+      <div class="page-intro__layout">
+        <div class="page-intro__text">
+          <p>Algumas viagens não são apenas destinos — são experiências que definem momentos. A linha Luxo & Exclusivo da Monreal Tours foi criada para quem não abre mão de qualidade absoluta, privacidade e atenção a cada detalhe.</p>
+          <p>Da seleção dos melhores hotéis do mundo à curadoria de experiências únicas — jantares privados em locais históricos, safáris exclusivos, cruzeiros de luxo em iate privativo — nosso time trata cada viagem como uma obra singular.</p>
+        </div>
+        <div class="page-intro__text">
+          <p>Com mais de 50 anos de relacionamento com as melhores redes hoteleiras e operadoras internacionais, temos acesso a reservas, upgrades e experiências que não estão disponíveis para o público geral.</p>
+          <p>Cada itinerário é construído do zero, considerando seus gostos, seu ritmo e o que torna a viagem verdadeiramente especial para você.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-highlights">
+    <div class="container">
+      <h2 class="page-highlights__title">O que está incluído</h2>
+      <ul class="page-highlights__list">
+        <li class="page-highlights__item">
+          <div class="page-highlights__icon" aria-hidden="true">✦</div>
+          <div class="page-highlights__item-text">
+            <strong>Consultoria personalizada</strong>
+            <span>Um consultor dedicado exclusivamente ao seu roteiro, do planejamento ao retorno</span>
+          </div>
+        </li>
+        <li class="page-highlights__item">
+          <div class="page-highlights__icon" aria-hidden="true">✦</div>
+          <div class="page-highlights__item-text">
+            <strong>Hospedagem de alto padrão</strong>
+            <span>Seleção dos melhores resorts, hotéis boutique e propriedades exclusivas do mundo</span>
+          </div>
+        </li>
+        <li class="page-highlights__item">
+          <div class="page-highlights__icon" aria-hidden="true">✦</div>
+          <div class="page-highlights__item-text">
+            <strong>Experiências únicas</strong>
+            <span>Jantares privados, acesso VIP, safáris exclusivos, iates e helicópteros privados</span>
+          </div>
+        </li>
+        <li class="page-highlights__item">
+          <div class="page-highlights__icon" aria-hidden="true">✦</div>
+          <div class="page-highlights__item-text">
+            <strong>Suporte 24h no destino</strong>
+            <span>Assistência completa durante toda a viagem, em qualquer fuso horário</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="page-cta">
+    <div class="container">
+      <h2 class="page-cta__title">Descubra experiências exclusivas</h2>
+      <p class="page-cta__sub">Fale com nossa equipe e comece a construir sua viagem ideal.</p>
+      <a href="https://wa.me/5511999850975?text=Olá!%20Tenho%20interesse%20em%20viagens%20Luxo%20%26%20Exclusivo." target="_blank" rel="noopener" class="btn-whatsapp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        Falar pelo WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__wordmark" aria-hidden="true">
+      <span class="footer__wordmark-text">MONREAL TOURS</span>
+    </div>
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col">
+            <a href="index.html" class="footer__logo" aria-label="Monreal Tours — início">
+              <img src="assets/images/logo.svg" alt="Monreal Tours" height="40">
+            </a>
+            <p>Desde 1970 realizando viagens inesquecíveis com credibilidade e sofisticação.</p>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-title">Experiências</p>
+            <a href="neve-ski.html">Neve &amp; Ski</a>
+            <a href="nautico-kite.html">Náutico &amp; Kite</a>
+            <a href="motor-aventura.html">Motor &amp; Aventura</a>
+            <a href="luxo-exclusivo.html">Luxo &amp; Exclusivo</a>
+            <a href="roteiros-destinos.html">Roteiros &amp; Destinos</a>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-title">Redes &amp; Contato</p>
+            <a href="https://instagram.com/monrealtours" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://facebook.com/monrealtours" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://wa.me/5511999850975" target="_blank" rel="noopener">WhatsApp (11) 99985-0975</a>
+            <address>contato@monrealtours.com.br</address>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__bottom-inner">
+          <p class="footer__copyright">© 2026 Monreal Tours. Todos os direitos reservados.</p>
+          <p class="footer__copyright"><a href="sobre.html" style="color:inherit">Sobre nós</a> &nbsp;·&nbsp; <a href="contato.html" style="color:inherit">Contato</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var wrapper = document.querySelector('.nav-has-dropdown');
+      if (!wrapper) return;
+      var trigger = wrapper.querySelector('.nav-dropdown-trigger');
+      var dropdown = document.getElementById('dropdown-experiencias');
+      var nub = document.getElementById('nav-nub');
+      var items = wrapper.querySelectorAll('.nav-dropdown__item');
+      var slides = wrapper.querySelectorAll('.nav-drop-slide');
+      var closeTimer = null;
+      function positionNub() { var t = trigger.getBoundingClientRect(); var d = dropdown.getBoundingClientRect(); nub.style.left = (t.left + t.width / 2 - d.left) + 'px'; }
+      function openDropdown() { clearTimeout(closeTimer); wrapper.classList.add('is-open'); trigger.setAttribute('aria-expanded', 'true'); positionNub(); }
+      function scheduleClose() { clearTimeout(closeTimer); closeTimer = setTimeout(function () { wrapper.classList.remove('is-open'); trigger.setAttribute('aria-expanded', 'false'); }, 150); }
+      wrapper.addEventListener('mouseenter', openDropdown);
+      wrapper.addEventListener('mouseleave', scheduleClose);
+      dropdown.addEventListener('mouseenter', function () { clearTimeout(closeTimer); });
+      dropdown.addEventListener('mouseleave', scheduleClose);
+      items.forEach(function (item) { item.addEventListener('mouseenter', function () { var cat = item.dataset.cat; items.forEach(function (i) { i.classList.remove('is-active'); }); item.classList.add('is-active'); slides.forEach(function (s) { s.classList.toggle('is-active', s.dataset.cat === cat); }); }); });
+    })();
+    var hamburger = document.getElementById('hamburger');
+    var mobileNav = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', function () { var open = hamburger.classList.toggle('is-open'); mobileNav.classList.toggle('is-open', open); hamburger.setAttribute('aria-expanded', open); });
+    mobileNav.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', function () { hamburger.classList.remove('is-open'); mobileNav.classList.remove('is-open'); hamburger.setAttribute('aria-expanded', 'false'); }); });
+  </script>
+</body>
+</html>
