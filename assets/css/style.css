@@ -3,7 +3,7 @@
    ============================================ */
 
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500&display=swap');
 
 /* ============================================
    VARIÁVEIS CSS
@@ -23,7 +23,7 @@
   --color-accent-purple:  #7B2D8B;
 
   /* Tipografia */
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-display: 'Sora', system-ui, sans-serif;
   --font-body:    'Inter', system-ui, sans-serif;
 
   /* Espaçamentos */
@@ -308,25 +308,25 @@ strong {
 .btn-shiny {
   position: relative; display: inline-flex; align-items: center; justify-content: center;
   padding: 0.85rem 2.4rem; font-family: var(--font-body); font-size: 0.9rem;
-  font-weight: 300; letter-spacing: 0.06em; text-decoration: none;
-  border-radius: 8px; overflow: hidden; color: rgba(255,255,255,0.92);
-  background-color: #000d3d;
-  box-shadow: 0 0 0 1.5px rgba(210,225,255,0.7), inset 0 1px 0 rgba(255,255,255,0.18), inset 0 0 20px rgba(40,100,255,0.08), 0 8px 32px rgba(0,20,137,0.22);
-  transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
+  font-weight: 400; letter-spacing: 0.06em; text-decoration: none;
+  border-radius: 8px; overflow: hidden; color: #ffffff;
+  background-color: #00AEEF;
+  box-shadow: 0 0 0 1.5px rgba(0,180,255,0.45), inset 0 1px 0 rgba(255,255,255,0.28), inset 0 0 20px rgba(0,160,230,0.12), 0 8px 32px rgba(0,120,200,0.25);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-shiny::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 55%, rgba(0,20,137,0.15) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 50%, rgba(0,80,160,0.1) 100%);
   pointer-events: none;
 }
 .btn-shiny::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to right, rgba(255,255,255,0.04), rgba(255,255,255,0.02), rgba(255,255,255,0.04));
+  background: linear-gradient(to right, rgba(255,255,255,0.06), rgba(255,255,255,0.02), rgba(255,255,255,0.06));
   opacity: 0; transition: opacity 0.3s ease; pointer-events: none;
 }
 .btn-shiny:hover {
-  background-color: #001240; color: #ffffff;
-  box-shadow: 0 0 0 1.5px rgba(230,240,255,0.9), inset 0 1px 0 rgba(255,255,255,0.28), inset 0 0 24px rgba(50,120,255,0.12), 0 12px 40px rgba(0,20,137,0.4);
+  background-color: #0095d4; color: #ffffff;
+  box-shadow: 0 0 0 1.5px rgba(0,200,255,0.65), inset 0 1px 0 rgba(255,255,255,0.35), inset 0 0 24px rgba(0,180,255,0.18), 0 12px 40px rgba(0,120,200,0.4);
 }
 .btn-shiny:hover::after { opacity: 1; }
 
@@ -334,23 +334,6 @@ strong {
    FOOTER
    ============================================ */
 .footer { background-color: var(--color-primary); color: var(--color-white); overflow: hidden; }
-.footer__wordmark {
-  text-align: center;
-  padding: 3rem 0 1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  overflow: hidden;
-}
-.footer__wordmark-text {
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 10vw, 7rem);
-  font-weight: 900;
-  color: rgba(255,255,255,0.08);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  line-height: 1;
-  white-space: nowrap;
-  user-select: none;
-}
 .footer__top { padding: var(--space-lg) 0 var(--space-md); border-bottom: 1px solid rgba(255,255,255,0.08); }
 .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--space-lg); }
 .footer__col-title {
@@ -413,35 +396,36 @@ strong {
 /* ============================================
    PAGE INTRO (introdução das páginas internas)
    ============================================ */
-.page-intro { background: var(--color-off-white); padding: 5rem 0; }
+.page-intro { background: var(--color-primary); padding: 5rem 0; }
 .page-intro__layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-.page-intro__text p { font-size: 1.05rem; line-height: 1.8; color: var(--color-dark); margin-bottom: 1.5rem; }
+.page-intro__text p { font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.72); margin-bottom: 1.5rem; }
 .page-intro__text p:last-child { margin-bottom: 0; }
 
 /* ============================================
    PAGE HIGHLIGHTS
    ============================================ */
-.page-highlights { background: var(--color-white); padding: 5rem 0; }
+.page-highlights { background: #000C52; padding: 5rem 0; }
 .page-highlights__title {
   font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 700; color: var(--color-primary); margin-bottom: 2.5rem;
+  font-weight: 700; color: var(--color-white); margin-bottom: 2.5rem;
 }
 .page-highlights__list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .page-highlights__item {
   display: flex; align-items: flex-start; gap: 1rem;
-  padding: 1.5rem; background: var(--color-off-white);
+  padding: 1.5rem; background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
 }
 .page-highlights__icon {
-  width: 40px; height: 40px; border-radius: 50%;
-  background-color: var(--color-primary);
+  width: 40px; height: 40px;
+  background-color: #00AEEF;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; font-size: 1rem; color: var(--color-white);
 }
 .page-highlights__item-text strong {
   display: block; font-family: var(--font-display); font-size: 1rem;
-  font-weight: 700; color: var(--color-primary); margin-bottom: 0.3rem;
+  font-weight: 700; color: var(--color-white); margin-bottom: 0.3rem;
 }
-.page-highlights__item-text span { font-size: 0.9rem; color: var(--color-gray); font-weight: 300; }
+.page-highlights__item-text span { font-size: 0.9rem; color: rgba(255,255,255,0.55); font-weight: 300; }
 
 /* ============================================
    PAGE CTA

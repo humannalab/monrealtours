@@ -8,7 +8,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500&display=swap">
 
   <link rel="stylesheet" href="assets/css/style.css">
 
@@ -228,58 +229,7 @@
     /* ============================================
        BOTÃO SHINY — usado no hero e demais seções
        ============================================ */
-    .btn-shiny {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.85rem 2.4rem;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      text-decoration: none;
-      border-radius: 8px;
-      overflow: hidden;
-      color: rgba(255, 255, 255, 0.92);
-      background-color: #000d3d;
-      box-shadow:
-        0 0 0 1.5px rgba(210, 225, 255, 0.7),
-        inset 0 1px 0 rgba(255, 255, 255, 0.18),
-        inset 0 0 20px rgba(40, 100, 255, 0.08),
-        0 8px 32px rgba(0, 20, 137, 0.22);
-      transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .btn-shiny::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 55%, rgba(0, 20, 137, 0.15) 100%);
-      pointer-events: none;
-    }
-
-    .btn-shiny::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.04));
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    .btn-shiny:hover {
-      background-color: #001240;
-      color: #ffffff;
-      box-shadow:
-        0 0 0 1.5px rgba(230, 240, 255, 0.9),
-        inset 0 1px 0 rgba(255, 255, 255, 0.28),
-        inset 0 0 24px rgba(50, 120, 255, 0.12),
-        0 12px 40px rgba(0, 20, 137, 0.4);
-    }
-
-    .btn-shiny:hover::after { opacity: 1; }
+    /* btn-shiny — herdado de style.css, sem override necessário */
 
     /* Hero btn alias */
     .hero__btn { /* inherits .btn-shiny */ }
@@ -836,62 +786,62 @@
     /* ============================================
        SOBRE HOME
        ============================================ */
-    .sobre-home { background: var(--color-white); padding: 7rem 0; }
+    .sobre-home { background: #000C52; padding: 7rem 0; }
     .sobre-home__layout { display: grid; grid-template-columns: 1fr 280px; gap: 5rem; align-items: center; }
     .sobre-home__label {
       font-family: var(--font-body); font-size: 0.7rem; font-weight: 400;
       letter-spacing: 0.25em; text-transform: uppercase;
-      color: var(--color-gray); margin-bottom: 1rem;
+      color: rgba(255,255,255,0.4); margin-bottom: 1rem;
     }
     .sobre-home__title {
       font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 700; color: var(--color-primary); margin-bottom: 1.5rem; line-height: 1.1;
+      font-weight: 700; color: var(--color-white); margin-bottom: 1.5rem; line-height: 1.1;
     }
     .sobre-home__text {
-      font-size: 1rem; line-height: 1.8; color: var(--color-dark);
+      font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.7);
       font-weight: 300; margin-bottom: 2.5rem; max-width: 60ch;
     }
     .sobre-home__stat { text-align: center; }
     .sobre-home__number {
       font-family: var(--font-display); font-size: clamp(5rem, 12vw, 9rem);
-      font-weight: 900; color: var(--color-primary); line-height: 1; display: block;
+      font-weight: 800; color: rgba(255,255,255,0.12); line-height: 1; display: block;
     }
     .sobre-home__stat-label {
       font-family: var(--font-body); font-size: 0.8rem; font-weight: 400;
       letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--color-gray); display: block; margin-top: 0.5rem;
+      color: rgba(255,255,255,0.4); display: block; margin-top: 0.5rem;
     }
 
     /* ============================================
        DEPOIMENTOS
        ============================================ */
-    .depoimentos { background: var(--color-off-white); padding: 5rem 0; }
+    .depoimentos { background: var(--color-primary); padding: 5rem 0; }
     .depoimentos__header { margin-bottom: 3rem; }
     .depoimentos__label {
       font-family: var(--font-body); font-size: 0.7rem; font-weight: 400;
-      letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-gray); margin-bottom: 0.5rem;
+      letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 0.5rem;
     }
     .depoimentos__title {
       font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 3rem);
-      font-weight: 700; color: var(--color-primary);
+      font-weight: 700; color: var(--color-white);
     }
     .depoimentos__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .depoimento {
-      background: var(--color-white); padding: 2rem 1.8rem;
-      position: relative; display: flex; flex-direction: column;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      padding: 2rem 1.8rem; position: relative; display: flex; flex-direction: column;
     }
     .depoimento__quote {
       font-family: var(--font-display); font-size: 5rem;
-      color: var(--color-primary); line-height: 0.6;
-      display: block; margin-bottom: 1.2rem; opacity: 0.4;
+      color: rgba(255,255,255,0.18); line-height: 0.6;
+      display: block; margin-bottom: 1.2rem;
     }
     .depoimento__text {
       font-size: 0.95rem; font-weight: 300; line-height: 1.8;
-      color: var(--color-dark); flex: 1; margin-bottom: 1.5rem;
+      color: rgba(255,255,255,0.72); flex: 1; margin-bottom: 1.5rem;
     }
     .depoimento__author { display: flex; flex-direction: column; gap: 2px; }
-    .depoimento__name { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--color-primary); }
-    .depoimento__location { font-size: 0.8rem; font-weight: 300; color: var(--color-gray); }
+    .depoimento__name { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--color-white); }
+    .depoimento__location { font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.4); }
 
     /* ============================================
        FORMULÁRIO DE CONTATO
@@ -917,22 +867,21 @@
     }
     .form-group input,
     .form-group textarea {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: var(--color-white);
+      background: #ffffff;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--color-dark);
       padding: 0.85rem 1rem;
       font-family: var(--font-body); font-size: 0.95rem; font-weight: 300;
       border-radius: 0;
       outline: none;
-      transition: border-color 0.2s ease, background 0.2s ease;
+      transition: border-color 0.2s ease;
       width: 100%;
     }
     .form-group input::placeholder,
-    .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group textarea::placeholder { color: rgba(0,0,0,0.3); }
     .form-group input:focus,
     .form-group textarea:focus {
-      border-color: rgba(255,255,255,0.5);
-      background: rgba(255,255,255,0.1);
+      border-color: #00AEEF;
     }
     .form-group textarea { resize: vertical; min-height: 130px; }
     .form-submit { margin-top: 1.5rem; }
@@ -1308,10 +1257,6 @@
        ============================================ -->
   <footer class="footer">
 
-    <div class="footer__wordmark" aria-hidden="true">
-      <span class="footer__wordmark-text">MONREAL TOURS</span>
-    </div>
-
     <div class="footer__top">
       <div class="container">
         <div class="footer__grid">
@@ -1358,10 +1303,16 @@
   <script src="assets/js/main.js" defer></script>
 
   <script>
-    // Intro splash — remove do DOM após a animação terminar
+    // Intro splash — roda só na primeira visita
     (function () {
       var intro = document.getElementById('intro');
       if (!intro) return;
+      if (sessionStorage.getItem('monreal_intro_seen')) {
+        intro.remove();
+        document.body.classList.remove('intro-active');
+        return;
+      }
+      sessionStorage.setItem('monreal_intro_seen', '1');
       // 3.2s delay + 1s fade + 0.2s buffer = 4.4s
       setTimeout(function () {
         intro.remove();

@@ -7,24 +7,24 @@
   <title>Sobre — Monreal Tours</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    body { background-color: var(--color-off-white); }
+    body { background-color: var(--color-primary); }
 
     /* Timeline */
-    .sobre-historia { padding: 6rem 0; background: var(--color-off-white); }
+    .sobre-historia { padding: 6rem 0; background: var(--color-primary); }
     .sobre-historia__intro { max-width: 680px; margin-bottom: 5rem; }
-    .sobre-historia__intro p { font-size: 1.15rem; line-height: 1.8; color: var(--color-text); margin-bottom: 1.2rem; }
+    .sobre-historia__intro p { font-size: 1.15rem; line-height: 1.8; color: rgba(255,255,255,0.72); margin-bottom: 1.2rem; }
 
     .timeline { position: relative; padding-left: 2rem; }
-    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--color-primary); opacity: 0.2; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,0.15); }
     .timeline__item { position: relative; padding: 0 0 3rem 2.5rem; }
     .timeline__item:last-child { padding-bottom: 0; }
-    .timeline__dot { position: absolute; left: -0.4rem; top: 0.35rem; width: 0.8rem; height: 0.8rem; background: var(--color-primary); }
-    .timeline__year { font-family: var(--font-body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 0.4rem; }
-    .timeline__title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem; }
-    .timeline__text { font-size: 0.95rem; line-height: 1.7; color: var(--color-text); max-width: 560px; }
+    .timeline__dot { position: absolute; left: -0.4rem; top: 0.35rem; width: 0.8rem; height: 0.8rem; background: #00AEEF; }
+    .timeline__year { font-family: var(--font-body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 0.4rem; }
+    .timeline__title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--color-white); margin-bottom: 0.5rem; }
+    .timeline__text { font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,0.65); max-width: 560px; }
 
     /* Propósito */
     .sobre-proposito { padding: 6rem 0; background: var(--color-primary); }
@@ -35,13 +35,13 @@
     .sobre-proposito__text { font-family: var(--font-display); font-size: 1.35rem; font-weight: 400; color: #fff; line-height: 1.5; }
 
     /* Eixos */
-    .sobre-eixos { padding: 6rem 0; background: var(--color-off-white); }
-    .sobre-eixos__title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: var(--color-primary); margin-bottom: 3rem; }
+    .sobre-eixos { padding: 6rem 0; background: #000C52; }
+    .sobre-eixos__title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: var(--color-white); margin-bottom: 3rem; }
     .sobre-eixos__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
-    .sobre-eixos__item { border-top: 1px solid rgba(0,20,137,0.15); padding-top: 1.5rem; }
-    .sobre-eixos__num { font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.1em; color: rgba(0,20,137,0.35); margin-bottom: 0.75rem; }
-    .sobre-eixos__name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem; }
-    .sobre-eixos__desc { font-size: 0.85rem; line-height: 1.65; color: var(--color-text); }
+    .sobre-eixos__item { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; }
+    .sobre-eixos__num { font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.25); margin-bottom: 0.75rem; }
+    .sobre-eixos__name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--color-white); margin-bottom: 0.5rem; }
+    .sobre-eixos__desc { font-size: 0.85rem; line-height: 1.65; color: rgba(255,255,255,0.65); }
 
     /* CTA sobre */
     .sobre-cta { padding: 6rem 0; background: var(--color-primary); text-align: center; }
@@ -258,9 +258,6 @@
   </section>
 
   <footer class="footer">
-    <div class="footer__wordmark" aria-hidden="true">
-      <span class="footer__wordmark-text">MONREAL TOURS</span>
-    </div>
     <div class="footer__top">
       <div class="container">
         <div class="footer__grid">

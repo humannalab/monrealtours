@@ -7,45 +7,47 @@
   <title>Contato — Monreal Tours</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    body { background-color: var(--color-off-white); }
+    body { background-color: var(--color-primary); }
 
     .contato-section { padding: 7rem 0; }
     .contato-section__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
 
-    .contato-info__eyebrow { font-family: var(--font-body); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary); opacity: 0.5; margin-bottom: 1.5rem; }
-    .contato-info__title { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; color: var(--color-primary); line-height: 1.2; margin-bottom: 1.5rem; }
-    .contato-info__text { font-size: 1rem; line-height: 1.8; color: var(--color-text); margin-bottom: 2.5rem; }
+    .contato-info__eyebrow { font-family: var(--font-body); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1.5rem; }
+    .contato-info__title { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 1.5rem; }
+    .contato-info__text { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.68); margin-bottom: 2.5rem; }
 
     .contato-canais { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 3rem; }
-    .contato-canal { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--color-primary); font-size: 0.95rem; transition: opacity 0.2s; }
+    .contato-canal { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: rgba(255,255,255,0.85); font-size: 0.95rem; transition: opacity 0.2s; }
     .contato-canal:hover { opacity: 0.7; }
-    .contato-canal__icon { width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; background: var(--color-primary); flex-shrink: 0; }
+    .contato-canal__icon { width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; background: #00AEEF; flex-shrink: 0; }
     .contato-canal__icon svg { width: 1.1rem; height: 1.1rem; fill: #fff; }
-    .contato-canal__label { font-weight: 500; display: block; }
-    .contato-canal__value { font-weight: 300; font-size: 0.9rem; color: var(--color-text); }
+    .contato-canal__label { font-weight: 500; display: block; color: #fff; }
+    .contato-canal__value { font-weight: 300; font-size: 0.9rem; color: rgba(255,255,255,0.5); }
 
     /* Form */
-    .contato-form { background: #fff; padding: 3rem; border: 1px solid rgba(0,20,137,0.08); }
-    .contato-form__title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem; }
-    .contato-form__sub { font-size: 0.9rem; color: var(--color-text); margin-bottom: 2rem; line-height: 1.5; }
+    .contato-form { background: rgba(255,255,255,0.05); padding: 3rem; border: 1px solid rgba(255,255,255,0.1); }
+    .contato-form__title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+    .contato-form__sub { font-size: 0.9rem; color: rgba(255,255,255,0.55); margin-bottom: 2rem; line-height: 1.5; }
 
     .form-group { margin-bottom: 1.25rem; }
-    .form-group label { display: block; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 0.5rem; }
+    .form-group label { display: block; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.5rem; }
     .form-group input,
     .form-group select,
-    .form-group textarea { width: 100%; padding: 0.85rem 1rem; border: 1px solid rgba(0,20,137,0.18); background: var(--color-off-white); font-family: var(--font-body); font-size: 0.95rem; color: var(--color-primary); outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+    .form-group textarea { width: 100%; padding: 0.85rem 1rem; border: 1px solid rgba(255,255,255,0.15); background: #fff; font-family: var(--font-body); font-size: 0.95rem; color: var(--color-dark); outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(0,0,0,0.3); }
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--color-primary); }
+    .form-group textarea:focus { border-color: #00AEEF; }
     .form-group textarea { resize: vertical; min-height: 120px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
     .form-submit { margin-top: 1.5rem; }
-    .form-submit button { width: 100%; padding: 1rem; background: var(--color-primary); color: #fff; border: none; font-family: var(--font-body); font-size: 0.9rem; font-weight: 400; letter-spacing: 0.06em; cursor: pointer; transition: background 0.2s; }
-    .form-submit button:hover { background: #001785; }
+    .form-submit button { width: 100%; padding: 1rem; background: #00AEEF; color: #fff; border: none; font-family: var(--font-body); font-size: 0.9rem; font-weight: 400; letter-spacing: 0.06em; cursor: pointer; transition: background 0.2s; border-radius: 8px; }
+    .form-submit button:hover { background: #0095d4; }
 
     @media (max-width: 900px) {
       .contato-section__grid { grid-template-columns: 1fr; gap: 4rem; }
@@ -221,9 +223,6 @@
   </section>
 
   <footer class="footer">
-    <div class="footer__wordmark" aria-hidden="true">
-      <span class="footer__wordmark-text">MONREAL TOURS</span>
-    </div>
     <div class="footer__top">
       <div class="container">
         <div class="footer__grid">
