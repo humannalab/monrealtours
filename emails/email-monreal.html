@@ -7,14 +7,7 @@
   <meta name="x-apple-disable-message-reformatting">
   <title>Monreal Tours</title>
   <!--[if mso]>
-  <noscript>
-    <xml>
-      <o:OfficeDocumentSettings>
-        <o:AllowPNG/>
-        <o:PixelsPerInch>96</o:PixelsPerInch>
-      </o:OfficeDocumentSettings>
-    </xml>
-  </noscript>
+  <noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
   <![endif]-->
 
   <!--
@@ -22,239 +15,220 @@
   MONREAL TOURS — Template de E-mail Marketing
   ================================================================
   COMO USAR:
-    1. Duplique este arquivo: email-monreal.html → email-[campanha]-[mês].html
-    2. Substitua todos os campos marcados com <!-- SUBSTITUIR -->
-    3. Troque todos os src="arquivo.jpg" por URLs absolutas (ex: https://...)
-    4. Teste no Gmail antes de disparar
-    5. Importe no Mailchimp / RD Station / ferramenta de disparo
+    1. Duplique: email-monreal.html → email-[tema]-[mes][ano].html
+    2. Substitua os campos marcados com  SUBSTITUIR
+    3. Troque todos src="" por URLs absolutas (https://...)
+    4. Teste no Gmail e Apple Mail antes de disparar
+    5. Importe no Mailchimp / RD Station
+  ================================================================
+  Paleta:
+    --color-primary:   #001489
+    --color-off-white: #F5F3EE
+    --color-dark:      #0A0A0A
+    --color-gray:      #6B6B6B
+  Tipografia:
+    Títulos — Playfair Display 700 (fallback: Georgia)
+    Corpo   — Inter 300/400     (fallback: Arial)
   ================================================================
   -->
 
-  <!-- Google Fonts — funciona no Apple Mail e iOS Mail; fallback Georgia/Arial em Gmail/Outlook -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Google Fonts: funciona no Apple Mail / iOS Mail -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style type="text/css">
-    /* Reset de email */
-    body, table, td, p, a, li, blockquote {
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-    }
-    table, td {
-      mso-table-lspace: 0pt;
-      mso-table-rspace: 0pt;
-    }
-    img {
-      -ms-interpolation-mode: bicubic;
-      border: 0;
-      line-height: 100%;
-      outline: none;
-      text-decoration: none;
-    }
-    /* Previne que o iOS Mail redimensione fontes automaticamente */
-    * { -webkit-text-size-adjust: none; }
+    /* Resets de email */
+    body, table, td, p, a { -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+    table, td { mso-table-lspace:0pt; mso-table-rspace:0pt; }
+    img { -ms-interpolation-mode:bicubic; border:0; line-height:100%; outline:none; text-decoration:none; }
 
-    /* ==============================
-       RESPONSIVO — ignorado pelo Gmail
-       mas funciona no Apple Mail,
-       Outlook mobile e Samsung Mail
-       ============================== */
+    /* ──── RESPONSIVO (Apple Mail, Outlook mobile, Samsung) ──── */
     @media only screen and (max-width: 620px) {
-      .email-container {
-        width: 100% !important;
-        min-width: 100% !important;
-      }
-      .hero-img {
-        height: 220px !important;
-      }
-      .card-body {
-        padding: 28px 20px !important;
-      }
-      .secondary-card {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-      .secondary-card img {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: 200px !important;
-      }
-      .title-main {
-        font-size: 26px !important;
-      }
-      .footer-wordmark {
-        font-size: 22px !important;
-        letter-spacing: 4px !important;
-      }
+      .email-container { width:100% !important; }
+      .hero-img         { height:220px !important; }
+      .card-pad         { padding:28px 20px 32px !important; }
+      .title-h1         { font-size:26px !important; }
+      .sec-card         { display:block !important; width:100% !important; }
+      .sec-card img     { width:100% !important; max-width:100% !important; height:190px !important; }
+      .sec-pad          { padding:14px 0 4px !important; }
+      .footer-wm        { font-size:20px !important; letter-spacing:3px !important; }
     }
   </style>
 </head>
 
-<body style="margin:0;padding:0;background-color:#F5F3EE;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<body style="margin:0;padding:0;background-color:#F5F3EE;">
 
-  <!-- ============================================================
-       PREHEADER — texto de preview que aparece no inbox
-       (invisível no corpo do e-mail, visível antes do assunto)
-       ============================================================ -->
+  <!-- Preheader: texto invisível que aparece no preview do inbox -->
   <div style="display:none;font-size:1px;color:#F5F3EE;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">
-    <!-- SUBSTITUIR: texto de preview do inbox (máx. 90 caracteres) -->
-    Monreal Tours — sua próxima viagem começa aqui. Descubra destinos exclusivos com 50 anos de credibilidade.&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    <!-- SUBSTITUIR: prévia do inbox (máx. 90 caracteres) -->
+    Monreal Tours — sua próxima viagem começa aqui.&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
   </div>
 
-  <!-- Wrapper externo: centraliza o e-mail na tela -->
+  <!-- ══════════════════════════════════════════════════════════
+       WRAPPER EXTERNO — fundo off-white
+       ══════════════════════════════════════════════════════════ -->
   <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation"
     style="background-color:#F5F3EE;">
     <tr>
-      <td align="center" style="padding:24px 0 40px;">
+      <td align="center" style="padding:32px 12px 48px;">
 
-        <!-- ====================================================
-             CONTAINER PRINCIPAL — 600px
-             ==================================================== -->
+        <!-- ══════════════════════════════════════════════════
+             CONTAINER — 600px
+             ══════════════════════════════════════════════════ -->
         <table class="email-container" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation"
           style="max-width:600px;width:100%;margin:0 auto;">
 
-          <!-- ================================================
+
+          <!-- ════════════════════════════════════════════════
                1. HEADER
-               Fundo: #001489 | Altura: 80px | Logo centralizado
-               ================================================ -->
+               Fundo #001489 | Logo 160px centralizado | 80px
+               ════════════════════════════════════════════════ -->
           <tr>
             <td align="center" valign="middle"
               style="background-color:#001489;height:80px;padding:0 24px;text-align:center;vertical-align:middle;">
               <!--
               SUBSTITUIR: logo
-              Na versão de disparo, usar URL absoluta:
-                src="https://seudominio.com/images/logo.png"
-              Fornecer versão PNG da logo (SVG não funciona no Outlook).
+              Fornecer versão PNG branca (SVG não funciona no Outlook).
+              Usar URL absoluta no disparo: src="https://seudominio.com/logo-branco.png"
               -->
-              <img src="logo.png" alt="Monreal Tours" width="160" height="auto"
-                style="display:block;margin:0 auto;max-width:160px;height:auto;border:0;">
+              <img src="logo.png" alt="Monreal Tours" width="150" height="auto"
+                style="display:block;margin:0 auto;max-width:150px;height:auto;">
+              <!-- Fallback texto — descomentar se preferir texto: -->
               <!--
-              FALLBACK TEXTO — descomente se quiser usar texto no lugar da imagem:
-              <p style="margin:0;font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;color:#FFFFFF;letter-spacing:4px;text-transform:uppercase;">MONREAL TOURS</p>
+              <p style="margin:0;font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#FFFFFF;letter-spacing:5px;text-transform:uppercase;">MONREAL TOURS</p>
               -->
             </td>
           </tr>
 
-          <!-- ================================================
-               2. HERO COM FOTO
-               Sem texto sobre a imagem.
-               Substituir por imagem do destino/campanha.
-               ================================================ -->
+
+          <!-- ════════════════════════════════════════════════
+               2. CARD PRINCIPAL
+               Borda #001489 nas 4 laterais
+               Foto → Corpo → CTA — tudo no mesmo card
+               ════════════════════════════════════════════════ -->
           <tr>
-            <td style="padding:0;margin:0;line-height:0;font-size:0;">
-              <!--
-              SUBSTITUIR: imagem hero
-              Dimensões: 600px × 320px (mínimo)
-              Usar URL absoluta no disparo.
-              Descrever o destino no atributo alt.
-              -->
-              <img class="hero-img" src="hero-image.jpg" alt="[Descreva o destino ou tema da campanha]"
-                width="600" height="320"
-                style="display:block;width:100%;max-width:600px;height:320px;object-fit:cover;border:0;">
-            </td>
-          </tr>
+            <td style="padding:0;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation"
+                style="border:1px solid #001489;background-color:#FFFFFF;">
 
-          <!-- ================================================
-               3. CARD PRINCIPAL
-               Fundo branco | Borda #001489 nas laterais e base
-               Padding: 40px | Tipografia conforme design system
-               ================================================ -->
-          <tr>
-            <td class="card-body"
-              style="background-color:#FFFFFF;border-left:2px solid #001489;border-right:2px solid #001489;border-bottom:2px solid #001489;padding:40px;">
-
-              <!-- SUBSTITUIR: tag/categoria -->
-              <p style="margin:0 0 20px 0;font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:#001489;line-height:1;">
-                NEVE &amp; SKI
-              </p>
-
-              <!-- SUBSTITUIR: título principal -->
-              <h1 class="title-main"
-                style="margin:0 0 14px 0;font-family:'Playfair Display',Georgia,serif;font-size:32px;font-weight:700;color:#0A0A0A;line-height:1.25;letter-spacing:-0.5px;">
-                Sua próxima aventura começa aqui
-              </h1>
-
-              <!-- SUBSTITUIR: subtítulo -->
-              <p style="margin:0 0 24px 0;font-family:Inter,Arial,sans-serif;font-size:16px;font-weight:300;color:#6B6B6B;line-height:1.5;">
-                Viagens inesquecíveis desde 1970
-              </p>
-
-              <!-- Linha divisória — 40px, azul royal -->
-              <table width="40" border="0" cellpadding="0" cellspacing="0" role="presentation"
-                style="margin:0 0 28px 0;">
+                <!-- 2a. Foto hero — largura total do card -->
                 <tr>
-                  <td width="40" height="2"
-                    style="width:40px;height:2px;background-color:#001489;font-size:2px;line-height:2px;">&nbsp;</td>
-                </tr>
-              </table>
-
-              <!-- SUBSTITUIR: texto do e-mail (2 a 3 parágrafos curtos) -->
-              <p style="margin:0 0 18px 0;font-family:Inter,Arial,sans-serif;font-size:16px;font-weight:400;color:#0A0A0A;line-height:1.8;max-width:520px;">
-                Lorem ipsum — descreva aqui o destino, a promoção ou o pacote em 2 a 3 parágrafos curtos. Seja direto e use linguagem confiável, sem exageros.
-              </p>
-              <p style="margin:0 0 32px 0;font-family:Inter,Arial,sans-serif;font-size:16px;font-weight:400;color:#0A0A0A;line-height:1.8;max-width:520px;">
-                A Monreal Tours oferece pacotes completos com passagem, hospedagem, traslados e suporte durante toda a viagem. Entre em contato e descubra o roteiro certo para você.
-              </p>
-
-              <!-- Botão CTA — usar table para compatibilidade máxima (Outlook) -->
-              <!-- SUBSTITUIR: link do CTA -->
-              <table border="0" cellpadding="0" cellspacing="0" role="presentation">
-                <tr>
-                  <td style="background-color:#001489;">
-                    <a href="[LINK_CTA]" target="_blank"
-                      style="display:inline-block;padding:16px 40px;background-color:#001489;color:#FFFFFF;font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:400;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:0;mso-padding-alt:0;-webkit-text-size-adjust:none;">
-                      SAIBA MAIS
-                    </a>
+                  <td style="padding:0;margin:0;line-height:0;font-size:0;">
+                    <!--
+                    SUBSTITUIR: imagem hero
+                    Dimensões: 600 × 320 px (mínimo)
+                    URL absoluta no disparo.
+                    -->
+                    <img class="hero-img" src="hero-image.jpg"
+                      alt="[Descreva o destino ou campanha]"
+                      width="598" height="320"
+                      style="display:block;width:100%;max-width:598px;height:320px;object-fit:cover;">
                   </td>
                 </tr>
-              </table>
 
+                <!-- 2b. Corpo do card -->
+                <tr>
+                  <td class="card-pad" style="padding:40px 40px 44px;background-color:#FFFFFF;">
+
+                    <!-- SUBSTITUIR: tag/categoria -->
+                    <p style="margin:0 0 18px 0;font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:#001489;line-height:1;">
+                      NEVE &amp; SKI
+                    </p>
+
+                    <!-- SUBSTITUIR: título principal -->
+                    <h1 class="title-h1"
+                      style="margin:0 0 14px 0;font-family:'Playfair Display',Georgia,serif;font-size:30px;font-weight:700;color:#0A0A0A;line-height:1.25;letter-spacing:-0.3px;">
+                      Sua próxima aventura começa aqui
+                    </h1>
+
+                    <!-- SUBSTITUIR: subtítulo -->
+                    <p style="margin:0 0 24px 0;font-family:Inter,Arial,sans-serif;font-size:16px;font-weight:300;color:#6B6B6B;line-height:1.5;">
+                      Viagens inesquecíveis desde 1970
+                    </p>
+
+                    <!-- Linha divisória 40px — azul royal -->
+                    <table width="40" border="0" cellpadding="0" cellspacing="0" role="presentation"
+                      style="margin:0 0 28px 0;">
+                      <tr>
+                        <td height="2" width="40"
+                          style="height:2px;width:40px;background-color:#001489;font-size:2px;line-height:2px;">&nbsp;</td>
+                      </tr>
+                    </table>
+
+                    <!-- SUBSTITUIR: texto do e-mail (2–3 parágrafos curtos) -->
+                    <p style="margin:0 0 18px 0;font-family:Inter,Arial,sans-serif;font-size:16px;font-weight:400;color:#0A0A0A;line-height:1.8;max-width:500px;">
+                      Lorem ipsum — descreva aqui o destino, a promoção ou o pacote em 2 a 3 parágrafos curtos. Use linguagem direta e confiável, sem exageros.
+                    </p>
+                    <p style="margin:0 0 36px 0;font-family:Inter,Arial,sans-serif;font-size:16px;font-weight:400;color:#0A0A0A;line-height:1.8;max-width:500px;">
+                      A Monreal Tours organiza tudo: passagens, hospedagem, traslados e suporte completo durante toda a viagem. Fale com nossa equipe e monte o roteiro ideal para você.
+                    </p>
+
+                    <!-- SUBSTITUIR: link do CTA -->
+                    <!-- Botão em table para garantir compatibilidade com Outlook -->
+                    <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+                      <tr>
+                        <td style="background-color:#001489;">
+                          <a href="[LINK_CTA]" target="_blank"
+                            style="display:inline-block;padding:15px 40px;background-color:#001489;color:#FFFFFF;font-family:Inter,Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:0;">
+                            SAIBA MAIS
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+
+                  </td>
+                </tr>
+
+              </table>
             </td>
           </tr>
 
-          <!-- Espaçador entre card principal e seção secundária -->
+
+          <!-- ════════════════════════════════════════════════
+               3. SEÇÃO SECUNDÁRIA — 2 cards (opcional)
+               Remover bloco inteiro se não for usar.
+               ════════════════════════════════════════════════ -->
+
+          <!-- Espaçador -->
           <tr>
-            <td style="height:32px;background-color:#F5F3EE;font-size:0;line-height:0;">&nbsp;</td>
+            <td style="height:24px;font-size:0;line-height:0;">&nbsp;</td>
           </tr>
 
-          <!-- ================================================
-               4. SEÇÃO SECUNDÁRIA — 2 cards menores (opcional)
-               Remover este bloco inteiro se não for usar.
-               ================================================ -->
           <!-- SUBSTITUIR: cards secundários (opcional) -->
-
-          <!-- Label da seção secundária -->
           <tr>
-            <td style="background-color:#F5F3EE;padding:0 0 16px 0;">
-              <p style="margin:0 0 0 4px;font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:#001489;line-height:1;">
+            <td style="padding:0 0 4px 0;">
+              <p style="margin:0;font-family:Inter,Arial,sans-serif;font-size:10px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:#001489;line-height:1;">
                 TAMBÉM EM DESTAQUE
               </p>
             </td>
           </tr>
 
-          <!-- Dois cards lado a lado -->
           <tr>
-            <td style="background-color:#F5F3EE;padding:0 0 32px 0;">
-              <table width="600" border="0" cellpadding="0" cellspacing="0" role="presentation"
-                style="width:100%;max-width:600px;">
+            <td style="padding:16px 0 0;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
                 <tr>
 
                   <!-- Card secundário 1 -->
-                  <td class="secondary-card" width="296" valign="top"
-                    style="width:296px;vertical-align:top;padding:0 8px 0 0;">
-                    <!-- SUBSTITUIR: imagem card 1 (URL absoluta no disparo) -->
-                    <img src="card1-image.jpg" alt="[Categoria 1]" width="292" height="180"
-                      style="display:block;width:100%;max-width:292px;height:180px;object-fit:cover;border:0;">
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                  <td class="sec-card" width="290" valign="top"
+                    style="width:290px;vertical-align:top;padding:0 8px 0 0;">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation"
+                      style="border:1px solid #001489;background-color:#FFFFFF;">
                       <tr>
-                        <td style="padding:14px 0 4px 0;">
+                        <td style="padding:0;line-height:0;font-size:0;">
+                          <!-- SUBSTITUIR: imagem card 1 -->
+                          <img src="card1-image.jpg" alt="[Categoria 1]"
+                            width="288" height="170"
+                            style="display:block;width:100%;max-width:288px;height:170px;object-fit:cover;">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="sec-pad" style="padding:20px 20px 22px;">
                           <!-- SUBSTITUIR: título card 1 -->
-                          <h3 style="margin:0 0 10px 0;font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;color:#0A0A0A;line-height:1.3;">
+                          <h3 style="margin:0 0 10px 0;font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:#0A0A0A;line-height:1.3;">
                             Náutico &amp; Kite
                           </h3>
                           <!-- SUBSTITUIR: link card 1 -->
                           <a href="[LINK_CARD1]" target="_blank"
-                            style="font-family:Inter,Arial,sans-serif;font-size:14px;font-weight:400;color:#001489;text-decoration:none;letter-spacing:0.5px;">
+                            style="font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:400;color:#001489;text-decoration:none;letter-spacing:0.3px;">
                             Ver mais →
                           </a>
                         </td>
@@ -263,21 +237,27 @@
                   </td>
 
                   <!-- Card secundário 2 -->
-                  <td class="secondary-card" width="296" valign="top"
-                    style="width:296px;vertical-align:top;padding:0 0 0 8px;">
-                    <!-- SUBSTITUIR: imagem card 2 (URL absoluta no disparo) -->
-                    <img src="card2-image.jpg" alt="[Categoria 2]" width="292" height="180"
-                      style="display:block;width:100%;max-width:292px;height:180px;object-fit:cover;border:0;">
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                  <td class="sec-card" width="290" valign="top"
+                    style="width:290px;vertical-align:top;padding:0 0 0 8px;">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation"
+                      style="border:1px solid #001489;background-color:#FFFFFF;">
                       <tr>
-                        <td style="padding:14px 0 4px 0;">
+                        <td style="padding:0;line-height:0;font-size:0;">
+                          <!-- SUBSTITUIR: imagem card 2 -->
+                          <img src="card2-image.jpg" alt="[Categoria 2]"
+                            width="288" height="170"
+                            style="display:block;width:100%;max-width:288px;height:170px;object-fit:cover;">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="sec-pad" style="padding:20px 20px 22px;">
                           <!-- SUBSTITUIR: título card 2 -->
-                          <h3 style="margin:0 0 10px 0;font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;color:#0A0A0A;line-height:1.3;">
+                          <h3 style="margin:0 0 10px 0;font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:#0A0A0A;line-height:1.3;">
                             Luxo &amp; Exclusivo
                           </h3>
                           <!-- SUBSTITUIR: link card 2 -->
                           <a href="[LINK_CARD2]" target="_blank"
-                            style="font-family:Inter,Arial,sans-serif;font-size:14px;font-weight:400;color:#001489;text-decoration:none;letter-spacing:0.5px;">
+                            style="font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:400;color:#001489;text-decoration:none;letter-spacing:0.3px;">
                             Ver mais →
                           </a>
                         </td>
@@ -290,51 +270,52 @@
             </td>
           </tr>
 
-          <!-- ================================================
-               5. FOOTER
-               Fundo: #0A0A0A | Wordmark | Social | Legal
-               ================================================ -->
+
+          <!-- ════════════════════════════════════════════════
+               4. FOOTER
+               Fundo: #001489 (consistente com header e site)
+               Logo / Redes / Legal / Descadastro
+               ════════════════════════════════════════════════ -->
+
+          <!-- Espaçador -->
           <tr>
-            <td align="center" style="background-color:#0A0A0A;padding:44px 32px 36px;text-align:center;">
+            <td style="height:32px;font-size:0;line-height:0;">&nbsp;</td>
+          </tr>
 
-              <!-- Wordmark -->
-              <p class="footer-wordmark"
-                style="margin:0 0 22px 0;font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:700;color:#FFFFFF;letter-spacing:6px;text-transform:uppercase;line-height:1;">
-                MONREAL TOURS
-              </p>
+          <tr>
+            <td align="center" style="background-color:#001489;padding:40px 32px 36px;text-align:center;">
 
-              <!-- Linha divisória fina -->
-              <table width="48" border="0" cellpadding="0" cellspacing="0" role="presentation"
-                style="margin:0 auto 22px;">
+              <!-- Logo (mesma do header) -->
+              <img src="logo.png" alt="Monreal Tours" width="130" height="auto"
+                style="display:block;margin:0 auto 20px;max-width:130px;height:auto;">
+
+              <!-- Divisória fina -->
+              <table width="40" border="0" cellpadding="0" cellspacing="0" role="presentation"
+                style="margin:0 auto 20px;">
                 <tr>
-                  <td width="48" height="1"
-                    style="width:48px;height:1px;background-color:rgba(255,255,255,0.2);font-size:1px;line-height:1px;">&nbsp;</td>
+                  <td height="1" width="40"
+                    style="height:1px;width:40px;background-color:rgba(255,255,255,0.25);font-size:1px;line-height:1px;">&nbsp;</td>
                 </tr>
               </table>
 
-              <!-- Redes sociais e contato -->
-              <p style="margin:0 0 16px 0;font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:300;color:#FFFFFF;line-height:2;">
+              <!-- Redes e contato -->
+              <p style="margin:0 0 14px 0;font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:300;color:rgba(255,255,255,0.85);line-height:1.8;">
                 <a href="https://instagram.com/monrealtours" target="_blank"
-                  style="color:#FFFFFF;text-decoration:none;font-family:Inter,Arial,sans-serif;">Instagram</a>
-                &nbsp;&nbsp;|&nbsp;&nbsp;
+                  style="color:rgba(255,255,255,0.85);text-decoration:none;">Instagram</a>
+                &nbsp;&nbsp;·&nbsp;&nbsp;
                 <a href="https://wa.me/5511999850975" target="_blank"
-                  style="color:#FFFFFF;text-decoration:none;font-family:Inter,Arial,sans-serif;">WhatsApp (11) 99985-0975</a>
+                  style="color:rgba(255,255,255,0.85);text-decoration:none;">WhatsApp (11) 99985-0975</a>
               </p>
 
               <!-- Linha legal -->
-              <p style="margin:0 0 10px 0;font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:300;color:#6B6B6B;line-height:1.6;">
-                © 2026 Monreal Tours. Todos os direitos reservados.
+              <p style="margin:0 0 10px 0;font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:300;color:rgba(255,255,255,0.45);line-height:1.6;">
+                © 2026 Monreal Tours. Todos os direitos reservados. São Paulo, SP — Brasil.
               </p>
 
-              <!-- Endereço (boa prática CAN-SPAM / LGPD) -->
-              <p style="margin:0 0 14px 0;font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:300;color:#6B6B6B;line-height:1.6;">
-                São Paulo, SP — Brasil
-              </p>
-
-              <!-- SUBSTITUIR: link de descadastro (obrigatório por lei) -->
+              <!-- SUBSTITUIR: link de descadastro (obrigatório) -->
               <p style="margin:0;font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:300;line-height:1.6;">
                 <a href="[UNSUBSCRIBE_URL]"
-                  style="color:#6B6B6B;text-decoration:underline;font-family:Inter,Arial,sans-serif;font-size:11px;">
+                  style="color:rgba(255,255,255,0.4);text-decoration:underline;font-family:Inter,Arial,sans-serif;font-size:11px;">
                   Cancelar inscrição
                 </a>
               </p>
@@ -342,8 +323,9 @@
             </td>
           </tr>
 
+
         </table>
-        <!-- /Container principal -->
+        <!-- /Container 600px -->
 
       </td>
     </tr>
