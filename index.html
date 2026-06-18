@@ -825,23 +825,32 @@
       font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 3rem);
       font-weight: 700; color: var(--color-white);
     }
-    .depoimentos__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .depoimentos__grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem; max-width: 860px;
+    }
     .depoimento {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
-      padding: 2rem 1.8rem; position: relative; display: flex; flex-direction: column;
+      background: #F5F3EE;
+      padding: 2.5rem 2rem; display: flex; flex-direction: column;
     }
     .depoimento__quote {
       font-family: var(--font-display); font-size: 5rem;
-      color: rgba(255,255,255,0.18); line-height: 0.6;
-      display: block; margin-bottom: 1.2rem;
+      color: var(--color-primary); line-height: 0.6;
+      display: block; margin-bottom: 1.25rem;
+    }
+    .depoimento__stars {
+      display: flex; gap: 2px; margin-bottom: 1rem;
+    }
+    .depoimento__stars span {
+      font-size: 1rem; color: #F4A800; line-height: 1;
     }
     .depoimento__text {
-      font-size: 0.95rem; font-weight: 300; line-height: 1.8;
-      color: rgba(255,255,255,0.72); flex: 1; margin-bottom: 1.5rem;
+      font-family: var(--font-body); font-size: 1.125rem; font-weight: 400; line-height: 1.8;
+      color: #0A0A0A; flex: 1; margin-bottom: 1.75rem;
     }
-    .depoimento__author { display: flex; flex-direction: column; gap: 2px; }
-    .depoimento__name { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--color-white); }
-    .depoimento__location { font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.4); }
+    .depoimento__author { display: flex; flex-direction: column; gap: 4px; }
+    .depoimento__name { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: #0A0A0A; }
+    .depoimento__source { font-family: var(--font-body); font-size: 0.75rem; font-weight: 400; color: #6B6B6B; }
 
     /* ============================================
        FORMULÁRIO DE CONTATO
@@ -1181,30 +1190,30 @@
 
         <article class="depoimento">
           <span class="depoimento__quote" aria-hidden="true">"</span>
-          <p class="depoimento__text">A Monreal organizou nossa viagem de neve para a Suíça com uma atenção que não encontramos em nenhuma outra agência. Cada detalhe foi cuidado, desde o traslado até o resort. Voltamos apaixonados e já estamos planejando a próxima.</p>
+          <div class="depoimento__stars" aria-label="5 estrelas">
+            <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+          </div>
+          <p class="depoimento__text">Melhor agência de viagens, tudo personalizado e atendimento espetacular, iremos viajar mais vezes com vocês. Gratidão.</p>
           <footer class="depoimento__author">
-            <span class="depoimento__name">Maria Fernanda S.</span>
-            <span class="depoimento__location">São Paulo, SP</span>
+            <span class="depoimento__name">William Constantino</span>
+            <span class="depoimento__source">Google Meu Negócio</span>
           </footer>
         </article>
 
         <article class="depoimento">
           <span class="depoimento__quote" aria-hidden="true">"</span>
-          <p class="depoimento__text">Viajamos em família para o Club Med e foi a melhor decisão que tomamos. A Monreal conseguiu condições especiais e ainda acompanhou todo o processo. Organização impecável — exatamente o que precisávamos com crianças.</p>
+          <div class="depoimento__stars" aria-label="5 estrelas">
+            <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+          </div>
+          <p class="depoimento__text">Agência séria e comprometida, fui no Hopi Hari com eles e amei, muito atencioso e preço excelente.</p>
           <footer class="depoimento__author">
-            <span class="depoimento__name">Carlos &amp; Ana R.</span>
-            <span class="depoimento__location">Rio de Janeiro, RJ</span>
+            <span class="depoimento__name">Joyce Costa</span>
+            <span class="depoimento__source">Google Meu Negócio</span>
           </footer>
         </article>
 
-        <article class="depoimento">
-          <span class="depoimento__quote" aria-hidden="true">"</span>
-          <p class="depoimento__text">Sou cliente há mais de 15 anos. A confiança que tenho na Monreal é difícil de explicar — eles conhecem meu gosto, antecipam o que preciso e nunca me decepcionaram. É como ter um amigo especialista em viagens.</p>
-          <footer class="depoimento__author">
-            <span class="depoimento__name">Roberto M.</span>
-            <span class="depoimento__location">Campinas, SP</span>
-          </footer>
-        </article>
+        <!-- LACUNA: depoimento de "God Car" — texto cortado na captura do Google Meu Negócio.
+             Recuperar o texto completo diretamente no perfil do Google e adicionar um 3º card aqui. -->
 
       </div>
     </div>
