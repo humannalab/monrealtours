@@ -826,8 +826,8 @@
       font-weight: 700; color: var(--color-white);
     }
     .depoimentos__grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem; max-width: 860px;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
     }
     .depoimento {
       background: #F5F3EE;
@@ -1212,8 +1212,17 @@
           </footer>
         </article>
 
-        <!-- LACUNA: depoimento de "God Car" — texto cortado na captura do Google Meu Negócio.
-             Recuperar o texto completo diretamente no perfil do Google e adicionar um 3º card aqui. -->
+        <article class="depoimento">
+          <span class="depoimento__quote" aria-hidden="true">"</span>
+          <div class="depoimento__stars" aria-label="5 estrelas">
+            <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+          </div>
+          <p class="depoimento__text">Ótimo atendimento, equipe busca a melhor qualidade e o melhor preço para o cliente. Super indico essa empresa.</p>
+          <footer class="depoimento__author">
+            <span class="depoimento__name">God Car</span>
+            <span class="depoimento__source">Google Meu Negócio</span>
+          </footer>
+        </article>
 
       </div>
     </div>
