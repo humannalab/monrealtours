@@ -462,3 +462,117 @@ strong {
   .page-intro__layout { grid-template-columns: 1fr; gap: 2rem; }
   .page-highlights__list { grid-template-columns: 1fr; }
 }
+
+/* ============================================
+   DESTINOS — hierarquia continentes / países / destinos
+   ============================================ */
+
+.breadcrumb {
+  background: rgba(0,0,0,0.22);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 0.85rem 0;
+}
+.breadcrumb__list {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; list-style: none;
+}
+.breadcrumb__sep { color: rgba(255,255,255,0.2); font-size: 0.75rem; user-select: none; }
+.breadcrumb__item { font-family: var(--font-body); font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+.breadcrumb__item a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
+.breadcrumb__item a:hover { color: var(--color-white); }
+.breadcrumb__item--active { color: rgba(255,255,255,0.9); }
+
+.destinos-section { background: var(--color-primary); padding: 4rem 0 6rem; }
+.destinos-section__intro { margin-bottom: 2.5rem; }
+.destinos-section__intro h2 {
+  font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 700; color: var(--color-white); margin-bottom: 0.4rem;
+}
+.destinos-section__intro p { font-size: 0.9rem; color: rgba(255,255,255,0.5); }
+
+.destinos-cards {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1.5rem;
+}
+.destino-card {
+  position: relative; display: flex; flex-direction: column;
+  border-radius: 12px; overflow: hidden;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  transition: border-color 0.3s, transform 0.3s; text-decoration: none;
+}
+.destino-card:not(.is-coming-soon):hover {
+  border-color: rgba(255,255,255,0.25); transform: translateY(-4px);
+}
+.destino-card.is-coming-soon { opacity: 0.45; pointer-events: none; cursor: default; }
+.destino-card__image {
+  height: 180px; background-size: cover; background-position: center; position: relative;
+}
+.destino-card__accent {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background-color: var(--card-accent, #00AEEF);
+}
+.destino-card__body {
+  padding: 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.4rem;
+}
+.destino-card__tag {
+  font-family: var(--font-body); font-size: 0.64rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--card-accent, #00AEEF);
+}
+.destino-card__name {
+  font-family: var(--font-display); font-size: 1.25rem; font-weight: 700;
+  color: var(--color-white); line-height: 1.2;
+}
+.destino-card__desc {
+  font-size: 0.875rem; line-height: 1.65; color: rgba(255,255,255,0.55);
+  margin-top: 0.2rem; flex: 1;
+}
+.destino-card__footer {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.07);
+}
+.destino-card__cta { font-size: 0.8rem; font-weight: 500; color: var(--card-accent, #00AEEF); letter-spacing: 0.04em; }
+.destino-card__arrow { font-size: 1rem; color: var(--card-accent, #00AEEF); transition: transform 0.2s; }
+.destino-card:not(.is-coming-soon):hover .destino-card__arrow { transform: translateX(4px); }
+
+/* Hotel listings */
+.hotel-listing { background: #000C52; padding: 5rem 0; }
+.hotel-listing__header { margin-bottom: 2.5rem; }
+.hotel-listing__title {
+  font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700; color: var(--color-white); margin-bottom: 0.5rem;
+}
+.hotel-listing__sub { font-size: 0.9rem; color: rgba(255,255,255,0.5); }
+.hotel-cards {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;
+}
+.hotel-card {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 12px; overflow: hidden; transition: border-color 0.3s;
+}
+.hotel-card:hover { border-color: rgba(255,255,255,0.2); }
+.hotel-card__image {
+  height: 160px; background-size: cover; background-position: center;
+  background-color: rgba(0,20,80,0.8);
+}
+.hotel-card__body { padding: 1.25rem 1.5rem 1rem; }
+.hotel-card__category {
+  font-family: var(--font-body); font-size: 0.64rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: #00AEEF; margin-bottom: 0.4rem;
+}
+.hotel-card__name {
+  font-family: var(--font-display); font-size: 1.05rem; font-weight: 700;
+  color: var(--color-white); margin-bottom: 0.5rem; line-height: 1.25;
+}
+.hotel-card__desc { font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.5); }
+.hotel-card__footer { padding: 0.85rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.07); }
+.hotel-card__consult {
+  font-size: 0.8rem; font-weight: 500; color: #00AEEF;
+  display: inline-flex; align-items: center; gap: 0.3rem; transition: color 0.2s;
+}
+.hotel-card:hover .hotel-card__consult { color: #4dd4ff; }
+
+@media (max-width: 768px) {
+  .destinos-cards { grid-template-columns: 1fr 1fr; }
+  .hotel-cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .destinos-cards { grid-template-columns: 1fr; }
+}
