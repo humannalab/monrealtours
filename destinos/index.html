@@ -104,149 +104,17 @@
     </div>
   </section>
 
-  <!-- Mapa mundial animado -->
-  <section class="world-map-section">
-    <div class="container">
-      <div class="world-map-section__intro">
-        <p class="world-map-section__eyebrow">Presença global</p>
-        <h2 class="world-map-section__title">De São Paulo para o mundo</h2>
-      </div>
+  <!-- Globo 3D interativo -->
+  <section class="globe-section">
+    <div class="globe-section__intro">
+      <p class="globe-section__eyebrow">Presença global</p>
+      <h2 class="globe-section__title">Explore o mundo com a Monreal</h2>
+      <p class="globe-section__hint">Arraste para girar &nbsp;·&nbsp; Clique em um continente</p>
     </div>
-    <div class="world-map-svg-wrapper">
-      <svg id="world-map" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa de destinos Monreal Tours — rotas partindo de São Paulo">
-        <defs>
-          <pattern id="dot-grid" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="0.9" fill="rgba(255,255,255,0.13)"/>
-          </pattern>
-          <filter id="city-glow" x="-80%" y="-80%" width="260%" height="260%">
-            <feGaussianBlur stdDeviation="3" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="arc-glow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="1.5" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-
-        <!-- Fundo de pontos -->
-        <rect width="800" height="400" fill="url(#dot-grid)"/>
-
-        <!-- Arcos de voo: São Paulo → destinos -->
-        <g filter="url(#arc-glow)">
-          <path id="arc-ny"     class="flight-arc" d="M 296 252 Q 266 48  236 110" fill="none" stroke="#00AEEF" stroke-width="1.3" opacity="0.75"/>
-          <path id="arc-miami"  class="flight-arc" d="M 296 252 Q 259 88  222 143" fill="none" stroke="#00AEEF" stroke-width="1.3" opacity="0.75"/>
-          <path id="arc-london" class="flight-arc" d="M 296 252 Q 348 28  400 86"  fill="none" stroke="#00AEEF" stroke-width="1.3" opacity="0.75"/>
-          <path id="arc-tokyo"  class="flight-arc" d="M 296 252 Q 503 62  710 121" fill="none" stroke="#00AEEF" stroke-width="1.3" opacity="0.75"/>
-          <path id="arc-ba"     class="flight-arc" d="M 296 252 Q 283 195 270 277" fill="none" stroke="#00AEEF" stroke-width="1.3" opacity="0.75"/>
-          <path id="arc-ct"     class="flight-arc" d="M 296 252 Q 368 192 441 275" fill="none" stroke="#00AEEF" stroke-width="1.3" opacity="0.75"/>
-          <path id="arc-sydney" class="flight-arc" d="M 296 252 Q 516 192 736 275" fill="none" stroke="#00AEEF" stroke-width="1.3" opacity="0.75"/>
-        </g>
-
-        <!-- Pontos viajantes ao longo dos arcos -->
-        <circle r="3" fill="#ffffff" opacity="0.9">
-          <animateMotion dur="1.4s" begin="0.1s" fill="freeze"><mpath href="#arc-ny"/></animateMotion>
-        </circle>
-        <circle r="3" fill="#ffffff" opacity="0.9">
-          <animateMotion dur="1.4s" begin="0.5s" fill="freeze"><mpath href="#arc-miami"/></animateMotion>
-        </circle>
-        <circle r="3" fill="#ffffff" opacity="0.9">
-          <animateMotion dur="1.4s" begin="0.9s" fill="freeze"><mpath href="#arc-london"/></animateMotion>
-        </circle>
-        <circle r="3" fill="#ffffff" opacity="0.9">
-          <animateMotion dur="1.4s" begin="1.3s" fill="freeze"><mpath href="#arc-tokyo"/></animateMotion>
-        </circle>
-        <circle r="3" fill="#ffffff" opacity="0.9">
-          <animateMotion dur="1.4s" begin="1.7s" fill="freeze"><mpath href="#arc-ba"/></animateMotion>
-        </circle>
-        <circle r="3" fill="#ffffff" opacity="0.9">
-          <animateMotion dur="1.4s" begin="2.1s" fill="freeze"><mpath href="#arc-ct"/></animateMotion>
-        </circle>
-        <circle r="3" fill="#ffffff" opacity="0.9">
-          <animateMotion dur="1.4s" begin="2.5s" fill="freeze"><mpath href="#arc-sydney"/></animateMotion>
-        </circle>
-
-        <!-- São Paulo (origem) -->
-        <g filter="url(#city-glow)">
-          <circle cx="296" cy="252" r="5.5" fill="#00AEEF"/>
-          <circle cx="296" cy="252" r="5.5" fill="#00AEEF" opacity="0.45">
-            <animate attributeName="r"       values="5.5;22" dur="2.2s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.5;0"  dur="2.2s" repeatCount="indefinite"/>
-          </circle>
-        </g>
-
-        <!-- Nova York -->
-        <g filter="url(#city-glow)">
-          <circle cx="236" cy="110" r="3.5" fill="#00AEEF"/>
-          <circle cx="236" cy="110" r="3.5" fill="#00AEEF" opacity="0.45">
-            <animate attributeName="r"       values="3.5;14" dur="2.2s" begin="0.4s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.5;0"  dur="2.2s" begin="0.4s" repeatCount="indefinite"/>
-          </circle>
-        </g>
-
-        <!-- Miami -->
-        <g filter="url(#city-glow)">
-          <circle cx="222" cy="143" r="3" fill="#00AEEF"/>
-          <circle cx="222" cy="143" r="3" fill="#00AEEF" opacity="0.45">
-            <animate attributeName="r"       values="3;12" dur="2.2s" begin="0.8s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.5;0" dur="2.2s" begin="0.8s" repeatCount="indefinite"/>
-          </circle>
-        </g>
-
-        <!-- Londres -->
-        <g filter="url(#city-glow)">
-          <circle cx="400" cy="86" r="3" fill="#00AEEF"/>
-          <circle cx="400" cy="86" r="3" fill="#00AEEF" opacity="0.45">
-            <animate attributeName="r"       values="3;12" dur="2.2s" begin="1.2s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.5;0" dur="2.2s" begin="1.2s" repeatCount="indefinite"/>
-          </circle>
-        </g>
-
-        <!-- Tóquio -->
-        <g filter="url(#city-glow)">
-          <circle cx="710" cy="121" r="3" fill="#00AEEF"/>
-          <circle cx="710" cy="121" r="3" fill="#00AEEF" opacity="0.45">
-            <animate attributeName="r"       values="3;12" dur="2.2s" begin="1.6s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.5;0" dur="2.2s" begin="1.6s" repeatCount="indefinite"/>
-          </circle>
-        </g>
-
-        <!-- Buenos Aires -->
-        <g filter="url(#city-glow)">
-          <circle cx="270" cy="277" r="3" fill="#00AEEF"/>
-          <circle cx="270" cy="277" r="3" fill="#00AEEF" opacity="0.45">
-            <animate attributeName="r"       values="3;12" dur="2.2s" begin="2.0s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.5;0" dur="2.2s" begin="2.0s" repeatCount="indefinite"/>
-          </circle>
-        </g>
-
-        <!-- Cidade do Cabo -->
-        <g filter="url(#city-glow)">
-          <circle cx="441" cy="275" r="3" fill="#00AEEF"/>
-          <circle cx="441" cy="275" r="3" fill="#00AEEF" opacity="0.45">
-            <animate attributeName="r"       values="3;12" dur="2.2s" begin="2.4s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.5;0" dur="2.2s" begin="2.4s" repeatCount="indefinite"/>
-          </circle>
-        </g>
-
-        <!-- Sydney -->
-        <g filter="url(#city-glow)">
-          <circle cx="736" cy="275" r="3" fill="#00AEEF"/>
-          <circle cx="736" cy="275" r="3" fill="#00AEEF" opacity="0.45">
-            <animate attributeName="r"       values="3;12" dur="2.2s" begin="2.8s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.5;0" dur="2.2s" begin="2.8s" repeatCount="indefinite"/>
-          </circle>
-        </g>
-
-        <!-- Labels das cidades -->
-        <text x="296" y="270" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.85)" font-weight="600">São Paulo</text>
-        <text x="236" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.6)">Nova York</text>
-        <text x="222" y="133" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.6)">Miami</text>
-        <text x="400" y="76"  text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.6)">Londres</text>
-        <text x="724" y="115" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.6)">Tóquio</text>
-        <text x="270" y="293" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.6)">Buenos Aires</text>
-        <text x="452" y="291" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.6)">Cidade do Cabo</text>
-        <text x="736" y="291" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.6)">Sydney</text>
-      </svg>
+    <div class="globe-wrapper" id="globe-wrapper">
+      <canvas id="globe-canvas" aria-label="Globo interativo de destinos Monreal Tours"></canvas>
+      <div class="globe-badge" id="globe-badge" aria-live="polite"></div>
+      <div class="globe-loading" id="globe-loading">Carregando mapa...</div>
     </div>
   </section>
 
@@ -382,36 +250,235 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
   <script>
-    /* Animação dos arcos do mapa mundial */
-    (function () {
-      var svg = document.getElementById('world-map');
-      if (!svg) return;
+  (function () {
+    var canvas  = document.getElementById('globe-canvas');
+    var badge   = document.getElementById('globe-badge');
+    var loading = document.getElementById('globe-loading');
+    if (!canvas) return;
 
-      function animateArcs() {
-        document.querySelectorAll('.flight-arc').forEach(function (arc, i) {
-          var len = arc.getTotalLength ? arc.getTotalLength() : 600;
-          arc.style.transition = 'none';
-          arc.style.strokeDasharray = len;
-          arc.style.strokeDashoffset = len;
-          setTimeout(function () {
-            arc.style.transition = 'stroke-dashoffset 1.4s ease';
-            arc.style.strokeDashoffset = 0;
-          }, 50 + i * 400);
-        });
-        if (svg.setCurrentTime) { svg.setCurrentTime(0); }
+    var ctx = canvas.getContext('2d');
+    var W, H, R;
+
+    var CONTINENT_ROUTES = {
+      'Americas' : '/destinos/americas/',
+      'Europe'   : '/destinos/europa/',
+      'Asia'     : '/destinos/asia/',
+      'Africa'   : '/destinos/africa/',
+      'Oceania'  : '/destinos/oceania/'
+    };
+    var CONTINENT_COLORS = {
+      'Americas' : '#00A0D2',
+      'Europe'   : '#7B2D8B',
+      'Asia'     : '#F47920',
+      'Africa'   : '#E8006A',
+      'Oceania'  : '#00A878'
+    };
+    var CONTINENT_LABELS = {
+      'Americas' : 'Américas',
+      'Europe'   : 'Europa',
+      'Asia'     : 'Ásia',
+      'Africa'   : 'África',
+      'Oceania'  : 'Oceania'
+    };
+
+    function getContinent(prop) {
+      if (!prop) return null;
+      if (prop === 'North America' || prop === 'South America') return 'Americas';
+      if (prop === 'Europe')   return 'Europe';
+      if (prop === 'Asia')     return 'Asia';
+      if (prop === 'Africa')   return 'Africa';
+      if (prop === 'Oceania')  return 'Oceania';
+      return null;
+    }
+
+    var projection = d3.geoOrthographic().clipAngle(90).precision(0.3);
+    var path       = d3.geoPath(projection, ctx);
+    var graticule  = d3.geoGraticule()();
+    var sphere     = { type: 'Sphere' };
+
+    var landData, countriesData, continentFeatures = {};
+    var dots = [];
+
+    var hoveredContinent = null;
+    var λ = -45, φ = 15;   // initial rotation
+    var dragging = false, dragStart = null, rotStart = null, moved = false;
+    var raf = null;
+
+    function resize() {
+      var wrapper = document.getElementById('globe-wrapper');
+      var size = Math.min(wrapper.clientWidth, 600);
+      W = size; H = size; R = size / 2 - 2;
+      canvas.width  = W * devicePixelRatio;
+      canvas.height = H * devicePixelRatio;
+      canvas.style.width  = W + 'px';
+      canvas.style.height = H + 'px';
+      ctx.scale(devicePixelRatio, devicePixelRatio);
+      projection.scale(R).translate([W / 2, H / 2]);
+    }
+
+    function generateDots(land) {
+      dots = [];
+      var step = 1.8;
+      for (var lat = -90; lat <= 90; lat += step) {
+        for (var lon = -180; lon <= 180; lon += step) {
+          var pt = [lon, lat];
+          if (d3.geoContains(land, pt)) {
+            dots.push(pt);
+          }
+        }
+      }
+    }
+
+    function buildContinentFeatures(countries) {
+      var groups = {};
+      countries.features.forEach(function (f) {
+        var c = getContinent(f.properties && f.properties.CONTINENT);
+        if (!c) return;
+        if (!groups[c]) groups[c] = [];
+        groups[c].push(f);
+      });
+      Object.keys(groups).forEach(function (c) {
+        continentFeatures[c] = { type: 'FeatureCollection', features: groups[c] };
+      });
+    }
+
+    function getContinentAt(x, y) {
+      if (!countriesData) return null;
+      var lonlat = projection.invert([x, y]);
+      if (!lonlat) return null;
+      for (var i = 0; i < countriesData.features.length; i++) {
+        var f = countriesData.features[i];
+        if (d3.geoContains(f, lonlat)) {
+          return getContinent(f.properties && f.properties.CONTINENT);
+        }
+      }
+      return null;
+    }
+
+    function render() {
+      ctx.clearRect(0, 0, W, H);
+
+      projection.rotate([λ, -φ]);
+
+      // ocean
+      ctx.beginPath(); path(sphere);
+      ctx.fillStyle = '#001030'; ctx.fill();
+
+      // graticule
+      ctx.beginPath(); path(graticule);
+      ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+      ctx.lineWidth = 0.4; ctx.stroke();
+
+      // dots
+      var hc = hoveredContinent ? (CONTINENT_COLORS[hoveredContinent] || '#fff') : null;
+      dots.forEach(function (pt) {
+        var px = projection(pt);
+        if (!px) return;
+        ctx.beginPath();
+        ctx.arc(px[0], px[1], 1.4, 0, Math.TAU || Math.PI * 2);
+        if (hoveredContinent) {
+          var inside = d3.geoContains(continentFeatures[hoveredContinent], pt);
+          ctx.fillStyle = inside ? hc : 'rgba(255,255,255,0.18)';
+        } else {
+          ctx.fillStyle = 'rgba(255,255,255,0.38)';
+        }
+        ctx.fill();
+      });
+
+      // continent outline when hovered
+      if (hoveredContinent && continentFeatures[hoveredContinent]) {
+        ctx.beginPath(); path(continentFeatures[hoveredContinent]);
+        ctx.strokeStyle = hc;
+        ctx.lineWidth = 1.5; ctx.stroke();
       }
 
-      animateArcs();
-      setInterval(function () {
-        document.querySelectorAll('.flight-arc').forEach(function (arc) {
-          var len = arc.getTotalLength ? arc.getTotalLength() : 600;
-          arc.style.transition = 'none';
-          arc.style.strokeDashoffset = len;
-        });
-        setTimeout(animateArcs, 300);
-      }, 10000);
-    })();
+      // globe rim
+      ctx.beginPath(); path(sphere);
+      ctx.strokeStyle = 'rgba(255,255,255,0.12)';
+      ctx.lineWidth = 1; ctx.stroke();
+    }
+
+    var autoRotate = true;
+    function tick() {
+      if (autoRotate && !dragging) { λ += 0.22; }
+      render();
+      raf = requestAnimationFrame(tick);
+    }
+
+    // pointer events
+    canvas.addEventListener('pointerdown', function (e) {
+      dragging = true; moved = false;
+      dragStart = [e.clientX, e.clientY];
+      rotStart  = [λ, φ];
+      canvas.setPointerCapture(e.pointerId);
+      autoRotate = false;
+    });
+
+    canvas.addEventListener('pointermove', function (e) {
+      if (dragging) {
+        var dx = e.clientX - dragStart[0];
+        var dy = e.clientY - dragStart[1];
+        if (Math.abs(dx) > 3 || Math.abs(dy) > 3) moved = true;
+        var sens = 90 / R;
+        λ = rotStart[0] + dx * sens;
+        φ = Math.max(-60, Math.min(60, rotStart[1] - dy * sens));
+      } else {
+        var rect = canvas.getBoundingClientRect();
+        var cx = e.clientX - rect.left;
+        var cy = e.clientY - rect.top;
+        var c = getContinentAt(cx, cy);
+        if (c !== hoveredContinent) {
+          hoveredContinent = c;
+          if (c) {
+            badge.textContent = CONTINENT_LABELS[c] || c;
+            badge.classList.add('is-visible');
+            canvas.style.cursor = 'pointer';
+          } else {
+            badge.classList.remove('is-visible');
+            canvas.style.cursor = '';
+          }
+        }
+      }
+    });
+
+    canvas.addEventListener('pointerup', function (e) {
+      if (!moved && hoveredContinent && CONTINENT_ROUTES[hoveredContinent]) {
+        window.location.href = CONTINENT_ROUTES[hoveredContinent];
+      }
+      dragging = false;
+      if (!moved) autoRotate = true;
+    });
+
+    canvas.addEventListener('pointerleave', function () {
+      if (!dragging) {
+        hoveredContinent = null;
+        badge.classList.remove('is-visible');
+        canvas.style.cursor = '';
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      resize();
+    });
+
+    // load data and start
+    resize();
+    Promise.all([
+      fetch('https://raw.githubusercontent.com/martynafford/natural-earth-geojson/master/110m/cultural/ne_110m_admin_0_countries.json').then(function(r){ return r.json(); })
+    ]).then(function (results) {
+      countriesData = results[0];
+      landData = { type: 'FeatureCollection', features: countriesData.features };
+      generateDots(landData);
+      buildContinentFeatures(countriesData);
+      loading.style.display = 'none';
+      tick();
+    }).catch(function () {
+      loading.textContent = 'Erro ao carregar mapa.';
+    });
+  })();
   </script>
   <script>
     (function () {

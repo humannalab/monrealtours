@@ -615,3 +615,104 @@ strong {
 @media (max-width: 768px) {
   .world-map-section { padding: 2.5rem 0 3rem; }
 }
+
+/* ============================================
+   GLOBO 3D INTERATIVO — destinos/index.html
+   ============================================ */
+.globe-section {
+  background: #000C52;
+  padding: 3rem 0 2rem;
+  text-align: center;
+}
+.globe-section__intro { margin-bottom: 1.5rem; padding: 0 2rem; }
+.globe-section__eyebrow {
+  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.22em;
+  text-transform: uppercase; color: #00AEEF; margin-bottom: 0.5rem;
+}
+.globe-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700; color: #fff; margin-bottom: 0.4rem;
+}
+.globe-section__hint { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+.globe-wrapper {
+  position: relative; max-width: 680px; margin: 0 auto; padding: 0 1.5rem;
+}
+#globe-canvas {
+  width: 100%; display: block; cursor: grab; border-radius: 50%;
+  touch-action: none;
+}
+#globe-canvas:active { cursor: grabbing; }
+.globe-badge {
+  position: absolute; top: 2.5rem; left: 50%; transform: translateX(-50%);
+  background: rgba(0,12,52,0.75); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff; font-family: var(--font-display);
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 0.35rem 1.2rem;
+  border-radius: 999px; pointer-events: none; white-space: nowrap;
+  opacity: 0; transition: opacity 0.2s;
+}
+.globe-badge.is-visible { opacity: 1; }
+.globe-loading {
+  position: absolute; inset: 0; display: flex;
+  align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.3); font-size: 0.85rem; font-family: var(--font-display);
+}
+
+/* ============================================
+   HOTEL — Página de detalhe
+   ============================================ */
+.hotel-page-intro { background: #000A3E; padding: 3.5rem 0 3rem; }
+.hotel-page-intro__layout {
+  display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: start;
+}
+.hotel-page-intro__category {
+  display: inline-block; background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.55); font-size: 0.65rem; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 999px; margin-bottom: 1rem;
+}
+.hotel-page-intro__name {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: #fff; font-weight: 700; line-height: 1.1; margin-bottom: 0.6rem;
+}
+.hotel-page-intro__address { color: rgba(255,255,255,0.35); font-size: 0.85rem; margin-bottom: 1.75rem; }
+.hotel-page-intro__desc { color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 0.95rem; }
+.hotel-page-stats { display: flex; flex-direction: column; gap: 1.5rem; }
+.hotel-page-stat { border-left: 2px solid rgba(255,255,255,0.1); padding-left: 1rem; }
+.hotel-page-stat__label {
+  font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3); margin-bottom: 0.25rem;
+}
+.hotel-page-stat__value { color: #fff; font-weight: 600; font-size: 0.9rem; }
+.hotel-gallery { background: #00071e; }
+.hotel-gallery__grid { display: grid; grid-template-columns: 3fr 2fr; gap: 3px; }
+.hotel-gallery__img { width: 100%; object-fit: cover; display: block; height: 500px; }
+.hotel-details { background: #000A3E; padding: 3.5rem 0; }
+.hotel-details__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem 4rem; }
+.hotel-details__group { margin-bottom: 2rem; }
+.hotel-details__group-label {
+  font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3); margin-bottom: 0.9rem;
+  padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.hotel-details__list { list-style: none; padding: 0; }
+.hotel-details__list li {
+  color: rgba(255,255,255,0.7); font-size: 0.92rem;
+  padding: 0.4rem 0 0.4rem 1.2rem; position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.hotel-details__list li::before {
+  content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  width: 4px; height: 4px; background: #00AEEF; border-radius: 50%;
+}
+a.hotel-card { display: block; text-decoration: none; }
+.hotel-card__image { background-size: cover; background-position: center; position: relative; }
+@media (max-width: 900px) {
+  .hotel-page-intro__layout { grid-template-columns: 1fr; }
+  .hotel-page-stats { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+  .hotel-gallery__grid { grid-template-columns: 1fr; }
+  .hotel-gallery__img { height: 250px; }
+  .hotel-details__grid { grid-template-columns: 1fr; gap: 0; }
+}
