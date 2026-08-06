@@ -109,12 +109,15 @@
     <div class="globe-section__intro">
       <p class="globe-section__eyebrow">Presença global</p>
       <h2 class="globe-section__title">Explore o mundo com a Monreal</h2>
-      <p class="globe-section__hint">Arraste para girar &nbsp;·&nbsp; Clique em um continente</p>
+      <p class="globe-section__hint">Clique em um continente para explorar</p>
     </div>
     <div class="globe-wrapper" id="globe-wrapper">
       <canvas id="globe-canvas" aria-label="Globo interativo de destinos Monreal Tours"></canvas>
       <div class="globe-badge" id="globe-badge" aria-live="polite"></div>
       <div class="globe-loading" id="globe-loading">Carregando mapa...</div>
+    </div>
+    <div class="globe-controls">
+      <input type="range" id="globe-slider" min="-180" max="180" value="-20" step="1" aria-label="Girar globo">
     </div>
   </section>
 
@@ -256,6 +259,7 @@
     var canvas  = document.getElementById('globe-canvas');
     var badge   = document.getElementById('globe-badge');
     var loading = document.getElementById('globe-loading');
+    var slider  = document.getElementById('globe-slider');
     if (!canvas) return;
 
     var ctx = canvas.getContext('2d');
@@ -286,10 +290,10 @@
     function getContinent(prop) {
       if (!prop) return null;
       if (prop === 'North America' || prop === 'South America') return 'Americas';
-      if (prop === 'Europe')   return 'Europe';
-      if (prop === 'Asia')     return 'Asia';
-      if (prop === 'Africa')   return 'Africa';
-      if (prop === 'Oceania')  return 'Oceania';
+      if (prop === 'Europe')  return 'Europe';
+      if (prop === 'Asia')    return 'Asia';
+      if (prop === 'Africa')  return 'Africa';
+      if (prop === 'Oceania') return 'Oceania';
       return null;
     }
 
@@ -298,13 +302,10 @@
     var graticule  = d3.geoGraticule()();
     var sphere     = { type: 'Sphere' };
 
-    var landData, countriesData, continentFeatures = {};
+    var countriesData, continentFeatures = {};
     var dots = [];
-
     var hoveredContinent = null;
-    var λ = -45, φ = 15;   // initial rotation
-    var dragging = false, dragStart = null, rotStart = null, moved = false;
-    var raf = null;
+    var λ = -20, φ = 15;
 
     function resize() {
       var wrapper = document.getElementById('globe-wrapper');
@@ -324,9 +325,7 @@
       for (var lat = -90; lat <= 90; lat += step) {
         for (var lon = -180; lon <= 180; lon += step) {
           var pt = [lon, lat];
-          if (d3.geoContains(land, pt)) {
-            dots.push(pt);
-          }
+          if (d3.geoContains(land, pt)) dots.push(pt);
         }
       }
     }
@@ -359,125 +358,100 @@
 
     function render() {
       ctx.clearRect(0, 0, W, H);
-
       projection.rotate([λ, -φ]);
 
-      // ocean
       ctx.beginPath(); path(sphere);
       ctx.fillStyle = '#001030'; ctx.fill();
 
-      // graticule
       ctx.beginPath(); path(graticule);
       ctx.strokeStyle = 'rgba(255,255,255,0.05)';
       ctx.lineWidth = 0.4; ctx.stroke();
 
-      // dots
       var hc = hoveredContinent ? (CONTINENT_COLORS[hoveredContinent] || '#fff') : null;
+      var TWO_PI = Math.PI * 2;
       dots.forEach(function (pt) {
         var px = projection(pt);
         if (!px) return;
         ctx.beginPath();
-        ctx.arc(px[0], px[1], 1.4, 0, Math.TAU || Math.PI * 2);
+        ctx.arc(px[0], px[1], 1.4, 0, TWO_PI);
         if (hoveredContinent) {
-          var inside = d3.geoContains(continentFeatures[hoveredContinent], pt);
-          ctx.fillStyle = inside ? hc : 'rgba(255,255,255,0.18)';
+          ctx.fillStyle = d3.geoContains(continentFeatures[hoveredContinent], pt)
+            ? hc : 'rgba(255,255,255,0.18)';
         } else {
           ctx.fillStyle = 'rgba(255,255,255,0.38)';
         }
         ctx.fill();
       });
 
-      // continent outline when hovered
       if (hoveredContinent && continentFeatures[hoveredContinent]) {
         ctx.beginPath(); path(continentFeatures[hoveredContinent]);
         ctx.strokeStyle = hc;
         ctx.lineWidth = 1.5; ctx.stroke();
       }
 
-      // globe rim
       ctx.beginPath(); path(sphere);
       ctx.strokeStyle = 'rgba(255,255,255,0.12)';
       ctx.lineWidth = 1; ctx.stroke();
     }
 
-    var autoRotate = true;
-    function tick() {
-      if (autoRotate && !dragging) { λ += 0.22; }
-      render();
-      raf = requestAnimationFrame(tick);
+    // Slider controla rotação
+    if (slider) {
+      slider.addEventListener('input', function () {
+        λ = +slider.value;
+        render();
+      });
     }
 
-    // pointer events
-    canvas.addEventListener('pointerdown', function (e) {
-      dragging = true; moved = false;
-      dragStart = [e.clientX, e.clientY];
-      rotStart  = [λ, φ];
-      canvas.setPointerCapture(e.pointerId);
-      autoRotate = false;
-    });
-
+    // Hover — throttled a 50ms
+    var hoverTimer = null;
     canvas.addEventListener('pointermove', function (e) {
-      if (dragging) {
-        var dx = e.clientX - dragStart[0];
-        var dy = e.clientY - dragStart[1];
-        if (Math.abs(dx) > 3 || Math.abs(dy) > 3) moved = true;
-        var sens = 90 / R;
-        λ = rotStart[0] + dx * sens;
-        φ = Math.max(-60, Math.min(60, rotStart[1] - dy * sens));
-      } else {
-        var rect = canvas.getBoundingClientRect();
-        var cx = e.clientX - rect.left;
-        var cy = e.clientY - rect.top;
-        var c = getContinentAt(cx, cy);
-        if (c !== hoveredContinent) {
-          hoveredContinent = c;
-          if (c) {
-            badge.textContent = CONTINENT_LABELS[c] || c;
-            badge.classList.add('is-visible');
-            canvas.style.cursor = 'pointer';
-          } else {
-            badge.classList.remove('is-visible');
-            canvas.style.cursor = '';
-          }
-        }
+      if (hoverTimer) return;
+      hoverTimer = setTimeout(function () { hoverTimer = null; }, 50);
+      var rect = canvas.getBoundingClientRect();
+      var c = getContinentAt(e.clientX - rect.left, e.clientY - rect.top);
+      if (c !== hoveredContinent) {
+        hoveredContinent = c;
+        badge.textContent = c ? (CONTINENT_LABELS[c] || c) : '';
+        c ? badge.classList.add('is-visible') : badge.classList.remove('is-visible');
+        canvas.style.cursor = c ? 'pointer' : '';
+        render();
       }
     });
 
-    canvas.addEventListener('pointerup', function (e) {
-      if (!moved && hoveredContinent && CONTINENT_ROUTES[hoveredContinent]) {
-        window.location.href = CONTINENT_ROUTES[hoveredContinent];
-      }
-      dragging = false;
-      if (!moved) autoRotate = true;
+    canvas.addEventListener('click', function (e) {
+      var rect = canvas.getBoundingClientRect();
+      var c = getContinentAt(e.clientX - rect.left, e.clientY - rect.top);
+      if (c && CONTINENT_ROUTES[c]) window.location.href = CONTINENT_ROUTES[c];
     });
 
     canvas.addEventListener('pointerleave', function () {
-      if (!dragging) {
+      if (hoveredContinent) {
         hoveredContinent = null;
         badge.classList.remove('is-visible');
         canvas.style.cursor = '';
+        render();
       }
     });
 
     window.addEventListener('resize', function () {
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       resize();
+      if (dots.length) render();
     });
 
-    // load data and start
     resize();
-    Promise.all([
-      fetch('https://raw.githubusercontent.com/martynafford/natural-earth-geojson/master/110m/cultural/ne_110m_admin_0_countries.json').then(function(r){ return r.json(); })
-    ]).then(function (results) {
-      countriesData = results[0];
-      landData = { type: 'FeatureCollection', features: countriesData.features };
-      generateDots(landData);
-      buildContinentFeatures(countriesData);
-      loading.style.display = 'none';
-      tick();
-    }).catch(function () {
-      loading.textContent = 'Erro ao carregar mapa.';
-    });
+    fetch('https://raw.githubusercontent.com/martynafford/natural-earth-geojson/master/110m/cultural/ne_110m_admin_0_countries.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        countriesData = data;
+        generateDots({ type: 'FeatureCollection', features: data.features });
+        buildContinentFeatures(data);
+        loading.style.display = 'none';
+        render();
+      })
+      .catch(function () {
+        loading.textContent = 'Erro ao carregar mapa.';
+      });
   })();
   </script>
   <script>

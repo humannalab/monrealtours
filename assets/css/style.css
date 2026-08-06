@@ -716,3 +716,41 @@ a.hotel-card { display: block; text-decoration: none; }
   .hotel-gallery__img { height: 250px; }
   .hotel-details__grid { grid-template-columns: 1fr; gap: 0; }
 }
+
+/* Globe slider controls */
+.globe-controls {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0 0.5rem;
+}
+#globe-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: min(360px, 70%);
+  height: 2px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 1px;
+  outline: none;
+  cursor: ew-resize;
+}
+#globe-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #00AEEF;
+  cursor: ew-resize;
+  box-shadow: 0 0 8px rgba(0,174,239,0.5);
+  transition: transform 0.15s;
+}
+#globe-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+#globe-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #00AEEF;
+  border: none;
+  cursor: ew-resize;
+  box-shadow: 0 0 8px rgba(0,174,239,0.5);
+}
