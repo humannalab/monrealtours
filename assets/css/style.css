@@ -754,3 +754,8 @@ a.hotel-card { display: block; text-decoration: none; }
   cursor: ew-resize;
   box-shadow: 0 0 8px rgba(0,174,239,0.5);
 }
+
+/* Destinos nav dropdown — sem painel de preview */
+.nav-dropdown--simple .nav-dropdown__inner { display: block; }
+.nav-dropdown--simple { min-width: 260px; }
+.nav-dropdown--simple .nav-dropdown__list { padding: 0.25rem 0; }
