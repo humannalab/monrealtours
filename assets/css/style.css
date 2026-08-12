@@ -243,6 +243,24 @@ strong {
   text-align: center;
   display: block;
 }
+.mobile-nav__section {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  padding: 1rem var(--container-pad) 0.35rem;
+  border-bottom: none;
+}
+.header__mobile-nav a.mobile-nav__sub {
+  font-size: 0.9rem;
+  padding-left: calc(var(--container-pad) + 1rem);
+  border-bottom-color: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.7);
+}
+.header__mobile-nav a.mobile-nav__sub:hover { color: var(--color-white); }
 
 /* Nav dropdown */
 .nav-has-dropdown { position: relative; }
