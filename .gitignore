@@ -1,0 +1,5 @@
+.DS_Store
+**/.DS_Store
+emails/
+node_modules/
+*.log
